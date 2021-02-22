@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postcode</title>
+  <style>
+    #send{
+      width: 300px;
+      margin: auto;
+      display: grid;
+    }
+    #send input{
+      padding: 10px;
+      margin: 10px;
+      text-align: center;
+      font-size: large;
+    }
+    #send button{
+      padding: 10px;
+      margin: 10px;
+    }
+    #postcode_select{
+      display: none;
+      width: 300px;
+      margin: auto;
+    }
+    #postcode_select select{
+      padding: 5px;
+      margin: 10px;
+      width: 280px;
+      text-align: center;
+      font-size: large;
+    }
+  </style>
+</head>
+<body>
+  <form action="post_api_controller.php" method="post">
+    <div id="send">
+      <input id="postcode_selection" type="text" placeholder="PostCode">
+      <button onclick="onSearch()" type="button">Submit</button>
+    </div>
+    <div id="postcode_select">
+      <select id="postcode_selector" onchange="onChange(value)">
+        <option selected disabled>Please Select...</option>
+      </select>
+    </div>
+    <input type="hidden" name="AmountToBorrow" value="20">
+    <input type="hidden" name="DateOfBirth" value="1984-9-28">
+    <input type="hidden" name="DrivingLicenseType" value="International">
+    <input type="hidden" name="Email" value="test@test.co.uk">
+    <input type="hidden" name="Registration" value="TE31 REG">
+    <input type="hidden" name="Forename" value="test">
+    <input type="hidden" name="Surname" value="test">
+    <input type="hidden" name="Title" value="Mr">
+    <input type="hidden" name="Employer" value="Employer">
+    <input type="hidden" name="JobTitle" value="Sheriff">
+    <input type="hidden" name="Mobile" value="07777777777">
+    <input type="hidden" name="employments[0][Employer]"  value="Employer">
+    <input type="hidden" name="employments[0][JobTitle]"  value="JobTitle">
+    <input type="hidden" name="employments[0][EmploymentStatus]"  value="Full-Time Employment">
+    <input type="hidden" name="employments[0][TimeAtEmployerMonths]"  value="3">
+    <input type="hidden" name="employments[0][TimeAtEmployerYears]"  value="5">
+    <input type="hidden" name="employments[0][MonthlyIncome]"  value="5">
+
+    <input type="hidden" name="employments[1][Employer]"  value="Employer">
+    <input type="hidden" name="employments[1][JobTitle]"  value="JobTitle">
+    <input type="hidden" name="employments[1][EmploymentStatus]"  value="Full-Time Employment">
+    <input type="hidden" name="employments[1][TimeAtEmployerMonths]"  value="3">
+    <input type="hidden" name="employments[1][TimeAtEmployerYears]"  value="5">
+    <input type="hidden" name="employments[1][MonthlyIncome]"  value="5">
+
+    <input type="hidden" name="addresses[0][Postcode]"  value="1">
+    <input type="hidden" name="addresses[0][Building]"  value="1">
+    <input type="hidden" name="addresses[0][County]"   value="test">
+    <input type="hidden" name="addresses[0][Street]"   value="test">
+    <input type="hidden" name="addresses[0][Town]"   value="test">
+    <input type="hidden" name="addresses[0][TimeAtAddressYears]"   value="test">
+    <input type="hidden" name="addresses[0][TimeAtAddressMonths]"   value="test">
+
+    <input type="hidden" name="addresses[1][Postcode]"  value="1">
+    <input type="hidden" name="addresses[1][Building]"  value="1">
+    <input type="hidden" name="addresses[1][County]"   value="test">
+    <input type="hidden" name="addresses[1][Street]"   value="test">
+    <input type="hidden" name="addresses[1][Town]"   value="test">
+    <input type="hidden" name="addresses[1][TimeAtAddressYears]"   value="test">
+    <input type="hidden" name="addresses[1][TimeAtAddressMonths]"   value="test">
+    <button type="submit" onclick="onSubmit()">Submit all</button>
+  </form>
+  <script>
+    const data = [];
+
+    function onChange(value){
+      data.push({
+        address: value
+      })
+    }
+    function onSearch(){
+      const code = document.querySelector("#postcode_selection").value
+      const select = document.querySelector("#postcode_select")
+      const selector = document.querySelector("#postcode_selector")
+      fetch(`https://api.firstclasspostcodes.com/data/postcode?search=${code}`,{
+        headers:{
+          "X-Api-Key":"eqZvAN6QR79c15K4gPiAV50juEL5vvPX9ObtWpFY"
+        }
+      })
+        .then(res=>res.json())
+        .then(data=>{
+          var i = 0
+          while (i <= data.numbers.length){
+            const option = document.createElement("option")
+            option.text = `${data.numbers[i].number} ${data.numbers[i].street} `
+            option.value = `${data.numbers[i].number} ${data.numbers[i].street}`
+            selector.add(option)
+            i++;
+          }
+        })
+        .catch(err=>console.log(err))
+      document.querySelector("#postcode_select").style.display = "block"
+    }
+
+    function onSubmit(){
+      console.log(data)
+    }
+  </script>
+</body>
+</html>

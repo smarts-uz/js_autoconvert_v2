@@ -1,0 +1,3432 @@
+:root {
+    --formGlobalBackgroundColour: #ffffff;
+    --formBackgroundColour: var(--formGlobalBackgroundColour);
+    /******form******/
+    --formAppPrimaryColour: #1C539A;
+    --formAppPrimaryColourHover: #1C539A;
+    --formAppSecondaryColour: #7ab047;
+    --formAppSecondaryColourHover: #6d9e3f;
+    --formHeaderColour: #444a51;
+    --formAppSvgColour: var(--formAppPrimaryColour);
+    --formAppSvgColourActive: #ffffff;
+    --formAppLoanInput: var(--formAppPrimaryColour);
+    --formSliderBackground: #d8dfe7;
+    --formTextColour: #333;
+    --formLabel: #000;
+    --formAppSvgBorderColour: #D8DEE5;
+    --formHeaderFont: "Lato", sans-serif;
+    --formBodyFont: "Lato", sans-serif;
+    --formVatColour: var(--formAppSecondaryColour);
+    /******Buttons******/
+    --formAppProgressColour: #D8DEE5;
+    --formAppButtonListColour: #fff;
+    --formAppButtonListTextColour: #fff;
+    --formAppProgressColourActive: var(--formAppPrimaryColour);
+    --formAppButtonColour: var(--formAppPrimaryColour);
+    --formAppButtonTextColour: #ffffff;
+    --formAppButtonTextColourOpposite: #ffffff;
+    --formAppNextButtonColour: var(--formAppSecondaryColour);
+    --formAppNextButtonColourHover: var(--formAppSecondaryColourHover);
+    --formAppSliderCircle: var(--formAppSecondaryColour);
+    --formAppSliderLine: var(--formAppPrimaryColour);
+    --formAppHyperLinkColour: #337ab7;
+    --formAppHyperLinkHoverColour: #23527c;
+    --formAppNextButtonFontColor: #fff;
+    --formAppNextButtonFontColorHover: #fff;
+    --formAppListButtonColour: var(--formAppButtonColour);
+    --formAppListButtonTextColour: var(--formTextColour);
+    --formAppListButtonTextColourOpposite: var(--formAppButtonTextColourOpposite);
+    --formLabelInner: var(--formLabel);
+    --formAppPostcode: #7ab048;
+}
+
+html, body {
+    touch-action: auto;
+    background: var(--formGlobalBackgroundColour);
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: var(--formTextColour);
+    font-family: var(--formBodyFont);
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Lato', sans-serif;
+    font-family: var(--formHeaderFont);
+}
+
+
+.form-header {
+    height: 84px;
+    background-color: #1c5399;
+}
+
+    .form-header.freedom-header {
+        background-color: #f8f8f8;
+        border-bottom: 1px solid #dce1e6;
+    }
+
+        .form-header.freedom-header .logo-holder {
+            max-width: 330px;
+            margin: 30px auto 0px;
+            display: block;
+            width: 100%;
+            padding: 0 15px;
+        }
+
+            .form-header.freedom-header .logo-holder img {
+                width: 100%;
+            }
+
+.form-steps-wrap > div {
+    display: none;
+}
+
+    .form-steps-wrap > div:first-of-type {
+        display: block;
+    }
+
+.logo-holder {
+    display: inline-block;
+    margin-top: 24px;
+}
+
+.trust-holder {
+    display: inline-block;
+    margin-top: 15px;
+    background-image: url(https://s3-eu-west-1.amazonaws.com/lead-generation-imagesbucket-19mw1y3yrtv38/0e24870a-0d5d-4d4a-b3bf-3c987ade0cb8.png);
+    width: 121px;
+    height: 54px;
+    background-repeat: no-repeat;
+}
+
+.cazana-header {
+    background-color: #ffffff;
+    border-bottom: 2px solid #1c5399;
+}
+
+    .cazana-header .logo-holder {
+        margin-top: 15px;
+    }
+
+        .cazana-header .logo-holder:first-child {
+            margin-top: 25px;
+        }
+
+        .cazana-header .logo-holder img {
+            width: 125px;
+        }
+
+@media (min-width: 768px) {
+    .cazana-header .logo-holder img {
+        width: 186px;
+    }
+}
+
+.form-holder {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.form-footer {
+    border-top: 1px solid #dce1e6;
+    margin-bottom: 40px;
+    padding-top: 45px;
+}
+
+.form-holder {
+    background-color: transparent;
+    background-color: var(--formGlobalBackgroundColour);
+}
+
+.form-container {
+    background-color: #fff;
+    background-color: var(--formBackgroundColour);
+}
+
+.footer-logo {
+    display: inline-block;
+    width: 100%;
+    margin-top: 3px;
+    margin-bottom: 20px;
+}
+
+.cazana-form-holder {
+    background-color: #ffffff;
+}
+
+    .cazana-form-holder .form-container {
+        border: 0;
+    }
+
+h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--formHeaderColour);
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--formHeaderColour);
+    margin-top: 10px;
+}
+
+.btn-loan-change, .loan-amount-display-holder, .loan-monthly-budget-display-holder,
+.btn-monthly-budget-change, .monthly-budget-amount-display-holder, .monthly-budget-monthly-budget-display-holder {
+    height: 49px;
+    border: 2px solid #d8dfe7;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.btn-loan-change,
+.btn-monthly-budget-change {
+    width: 49px;
+    background-color: var(--formAppButtonListColour);
+}
+
+.loan-amount-display-holder, .monthly-budget-amount-display-holder,
+.monthly-budget-amount-display-holder, .monthly-budget-amount-display-holder {
+    margin-left: 8px;
+    margin-right: 8px;
+    width: 50%;
+    /* for browsers that don't support calc */
+    width: calc(99% - 120px);
+    position: relative;
+}
+
+.loan-amount-display,
+.monthly-budget-amount-display {
+    text-align: center;
+    border: none;
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1c5399;
+    line-height: 35px;
+    padding: 0;
+}
+
+.js-btn-loan-increase,
+.js-btn-monthly-budget-increase {
+    background-image: url(https://s3-eu-west-1.amazonaws.com/lead-generation-imagesbucket-19mw1y3yrtv38/9aece9bf-397f-40bc-b210-3c719ebde178.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.js-btn-loan-decrease,
+.js-btn-monthly-budget-decrease {
+    background-image: url(https://s3-eu-west-1.amazonaws.com/lead-generation-imagesbucket-19mw1y3yrtv38/ecf1c71a-89f7-44d1-9a57-3dd0b977bd09.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                      not supported by any browser */
+}
+
+#loan-amount-slider,
+#monthly-budget-amount-slider {
+    margin-top: 25px;
+    background: #d8dfe7;
+    background: var(--formSliderBackground);
+    border: none;
+    border-radius: 10px;
+    height: 10px;
+    cursor: pointer;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    background: url(https://s3-eu-west-1.amazonaws.com/lead-generation-imagesbucket-19mw1y3yrtv38/fd9f3aef-f64a-4109-bd07-bba89a186d7a.png);
+    border: none;
+    height: 18px;
+    width: 18px;
+    margin-top: 1px;
+    outline: 0;
+    cursor: pointer;
+}
+
+.car-selected, .car-unselected, .motorbike-selected, .motorbike-unselected, .van-selected, .van-unselected {
+    max-width: 100%;
+    background-size: 100%;
+    background-image: url("https://s3-eu-west-1.amazonaws.com/lead-generation-imagesbucket-19mw1y3yrtv38/00a7cec7-b2c6-4011-90cb-af1a0f49499e.png");
+    background-image: url("https://s3-eu-west-1.amazonaws.com/lead-generation-imagesbucket-19mw1y3yrtv38/92f29816-aae7-4e31-ac41-6cf1b2b033e9.png");
+    cursor: pointer;
+}
+
+.btn-circle-car[data-selected=""] .car-unselected {
+    background-position: 0 0%;
+    background-size: 100%;
+}
+
+.car-unselected {
+    background-position: 0 20%;
+    background-size: 100%;
+}
+
+.btn-circle-motorbike[data-selected=""] .motorbike-unselected {
+    background-position: 0 40%;
+    background-size: 100%;
+}
+
+.motorbike-unselected {
+    background-position: 0 60%;
+    background-size: 100%;
+}
+
+.btn-circle-van[data-selected=""] .van-unselected {
+    background-position: 0 80%;
+    background-size: 100%;
+}
+
+.van-unselected {
+    background-position: 0 100%;
+    background-size: 100%;
+}
+
+.caravan-selected, .caravan-unselected, .static-caravan-selected, .static-caravan-unselected {
+    max-width: 100%;
+    background-size: 100%;
+    background-image: url("https://s3-eu-west-1.amazonaws.com/lead-generation-imagesbucket-19mw1y3yrtv38/b93e349f-bf29-4ccd-96d3-1a3831c73e89.png");
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+.caravan-unselected {
+    background-position: 0 33%;
+    background-size: 100%;
+}
+
+.btn-circle-caravan[data-selected=""] .caravan-unselected {
+    background-position: 0 0%;
+    background-size: 100%;
+}
+
+.mpv-unselected,
+.convertable-unselected,
+.suv-unselected,
+.estate-unselected,
+.coupe-unselected,
+.pickup-unselected,
+.hatchback-unselected,
+.saloon-unselected,
+.notsure-unselected {
+    max-width: 100%;
+    background-size: 100%;
+    background-image: url("https://s3-eu-west-1.amazonaws.com/lead-generation-imagesbucket-19mw1y3yrtv38/89353b53-48ec-46af-9f2a-fa20b3a1c8b7/9cartype.jpg");
+    cursor: pointer;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}
+
+.mpv-unselected {
+    background-position: 0 5.85%;
+}
+
+.btn-circle-mpv[data-selected=""] .mpv-unselected {
+    background-position: 0 0;
+    opacity: 1;
+}
+
+.convertable-unselected {
+    background-position: 0 17.65%;
+}
+
+.btn-circle-convertable[data-selected=""] .convertable-unselected {
+    background-position: 0 11.73%;
+    opacity: 1;
+}
+
+.suv-unselected {
+    background-position: 0 29.4%;
+}
+
+.btn-circle-suv[data-selected=""] .suv-unselected {
+    background-position: 0 23.5%;
+    opacity: 1;
+}
+
+.estate-unselected {
+    background-position: 0 41.15%;
+}
+
+.btn-circle-estate[data-selected=""] .estate-unselected {
+    background-position: 0 35.3%;
+    opacity: 1;
+}
+
+.coupe-unselected {
+    background-position: 0 52.94%;
+}
+
+.btn-circle-coupe[data-selected=""] .coupe-unselected {
+    background-position: 0 47.05%;
+    opacity: 1;
+}
+
+.pickup-unselected {
+    background-position: 0 64.7%;
+}
+
+.btn-circle-pickup[data-selected=""] .pickup-unselected {
+    background-position: 0 58.8%;
+    opacity: 1;
+}
+
+.hatchback-unselected {
+    background-position: 0 76.41%;
+}
+
+.btn-circle-hatchback[data-selected=""] .hatchback-unselected {
+    background-position: 0 70.55%;
+    opacity: 1;
+}
+
+.saloon-unselected {
+    background-position: 0 88.2%;
+}
+
+.btn-circle-saloon[data-selected=""] .saloon-unselected {
+    background-position: 0 82.3%;
+    opacity: 1;
+}
+
+.notsure-unselected {
+    background-position: 0 99.95%;
+}
+
+.btn-circle-notsure[data-selected=""] .notsure-unselected {
+    background-position: 0 94.1%;
+    opacity: 1;
+}
+
+.hottub-selected,
+.hottub-unselected {
+    max-width: 100%;
+    background-size: 100%;
+    background-image: url("https://s3-eu-west-1.amazonaws.com/lead-generation-imagesbucket-19mw1y3yrtv38/0ded025a-c863-403f-a294-56c855856573/hottub-icon.png");
+    cursor: pointer;
+}
+
+.btn-circle-hottub[data-selected=""] .hottub-unselected {
+    background-position: 0 0%;
+    background-size: 100%;
+}
+
+.hottub-unselected {
+    background-position: 0 20%;
+    background-size: 100%;
+}
+
+.button-text {
+    font-weight: 700;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    color: #1C539A;
+    color: var(--formAppPrimaryColour);
+    color: var(--formAppButtonTextColour);
+    font-size: 10px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently */
+}
+
+.loan-amount-controls-holder,
+.monthly-budget-amount-controls-holder {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.vehicle-buttons-holder {
+    margin: 15px 0 0 0;
+}
+
+    .vehicle-buttons-holder .btn-circle-holder {
+        padding-left: 2px;
+        padding-right: 2px;
+        margin-bottom: 3px;
+    }
+
+.btn-circle[data-selected=""] .button-text {
+    color: #1C539A;
+    color: var(--formAppPrimaryColourHover);
+    color: var(--formAppButtonTextColourOpposite);
+}
+
+.vehicle-buttons-header {
+    margin-top: 0px;
+}
+
+.btn-get-started {
+    margin-top: 30px;
+    background-color: #7ab047;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+}
+
+    .btn-get-started:hover, .btn-get-started:focus {
+        background-color: #649d42;
+        color: white;
+    }
+
+.ui-widget-header {
+    background: #1c5399;
+    height: 2px !important;
+    top: 4px !important;
+    margin-left: 6px;
+}
+
+.tick {
+    position: absolute;
+    background-image: url(https://s3-eu-west-1.amazonaws.com/lead-generation-imagesbucket-19mw1y3yrtv38/c94a7401-827a-4d96-9d88-b6d2752d7f95.png);
+    width: 20px;
+    height: 20px;
+    right: -5px;
+    top: -7px;
+    display: none;
+    z-index: 1000;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.btn-circle[data-selected=""] > .tick {
+    display: block;
+}
+
+.sub-header {
+    font-size: 16px;
+    color: #878b90;
+    margin-bottom: 30px;
+}
+
+label {
+    text-transform: initial;
+    font-size: 16px;
+    color: #1c5399;
+}
+
+.form-control {
+    margin-top: 2px;
+    border-color: #d8dfe7;
+    color: #444;
+    height: 65px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.btn-back {
+    background-color: #d1d3d8;
+    text-indent: -12px;
+}
+
+    .btn-back:hover {
+        background-color: #9aa3ad;
+    }
+
+.btn-next {
+    background-color: #7ab047;
+}
+
+.btn-next, .btn-back {
+    color: white;
+    height: 42px;
+    padding-top: 8px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+    .btn-back:hover, .btn-back:focus {
+        color: white;
+        outline: none;
+    }
+
+.btn-back {
+    margin-top: 15px !important;
+    height: initial !important;
+    background-color: transparent !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    color: #ccc !important;
+    color: var(--formAppPrimaryColour) !important;
+    padding-top: 6px !important;
+}
+
+.small {
+    text-transform: none;
+    color: #9099a5;
+}
+
+.btn-postcode {
+    color: #7ab048;
+    color: var(--formAppPostcode);
+    border-color: #7ab048;
+    border-color: var(--formAppPostcode);
+    height: 54px;
+    margin-top: 0px;
+    padding-top: 8px;
+    font-size: 16px;
+    background-color: white;
+    line-height: 40px;
+}
+
+    .btn-postcode:hover, .btn-postcode:focus {
+        outline: none;
+        color: white;
+        background-color: #7ab048;
+        background-color: var(--formAppPostcode);
+    }
+
+.form-horizontal .checkbox {
+    margin-top: 15px;
+}
+
+.checkbox label {
+    text-transform: none;
+    font-size: 16px;
+}
+
+.btn-submit {
+    text-indent: initial;
+}
+
+.disclaimer {
+    margin-top: 20px;
+    color: #aab0b9;
+}
+
+    .disclaimer a {
+        color: inherit;
+        text-decoration: underline;
+    }
+
+.btn-circle-holder {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.btn-default {
+    background-color: #7ab047;
+    background-color: var(--formAppSecondaryColour);
+    color: white;
+    color: var(--formAppNextButtonFontColor);
+    font-size: 16px;
+    height: 54px;
+    padding-top: 15px;
+    border: none;
+}
+
+    .btn-default:hover, .btn-default:focus {
+        background-color: #6d9e3f;
+        background-color: var(--formAppSecondaryColourHover);
+        color: white;
+        color: var(--formAppNextButtonFontColorHover);
+        outline: none;
+    }
+
+.current-address-text-holder h2 {
+    margin-top: 0;
+    color: #878b90;
+    border-bottom: 1px solid #d8dfe7;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.current-address-text-holder {
+    padding: 15px;
+    cursor: pointer;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border: 1px solid #1c5399;
+    border-color: #d8dfe7;
+    border-radius: 4px;
+}
+
+.current-address-text {
+    margin-bottom: 0;
+    color: #878b90;
+}
+
+h3 {
+    color: #444a51;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.alert-danger {
+    background-color: #c1777e;
+    color: white;
+    font-style: italic;
+    font-size: 16px;
+    padding: 10px;
+}
+
+    .alert-danger a {
+        color: white;
+        text-decoration: underline;
+        font-style: normal;
+        font-weight: bold;
+    }
+
+h3 a {
+    color: #7ab048;
+    text-decoration: underline;
+}
+
+.has-error .form-control, .has-custom-error .form-control {
+    border-color: #ff0000;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.has-success .form-control, .has-custom-success .form-control {
+    border-color: #3c763d;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.has-warning .form-control, .has-custom-warning .form-control {
+    border-color: #8a6d3b;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.has-custom-error .help-block {
+    color: #ff0000;
+}
+
+.has-custom-success .help-block {
+    color: #3c763d;
+}
+
+.has-custom-warning .help-block {
+    color: #8a6d3b;
+}
+
+.has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+    color: #FF0000;
+}
+
+.help-block.with-errors {
+    float: left;
+    width: 100%;
+    margin: 0;
+}
+
+    .help-block.with-errors ul {
+        margin: 0;
+    }
+
+.logo-holder img {
+    width: 140px;
+}
+
+.footer-logo img {
+    width: 100%;
+    max-width: 128px;
+}
+
+.form-footer p, .form-footer a {
+    color: #9a9da1;
+}
+
+.form-footer a {
+    text-decoration: underline;
+}
+
+.helper-text {
+    display: block;
+    text-decoration: underline;
+    color: #1c5399;
+    margin-bottom: 15px;
+}
+
+.helper-text-display {
+    font-size: 16px;
+}
+
+.btn-default.disabled, .btn-default[disabled], fieldset[disabled] .btn-default, .btn-default.disabled:hover, .btn-default[disabled]:hover, fieldset[disabled] .btn-default:hover, .btn-default.disabled:focus, .btn-default[disabled]:focus, fieldset[disabled] .btn-default:focus, .btn-default.disabled.focus, .btn-default[disabled].focus, fieldset[disabled] .btn-default.focus, .btn-default.disabled:active, .btn-default[disabled]:active, fieldset[disabled] .btn-default:active, .btn-default.disabled.active, .btn-default[disabled].active, fieldset[disabled] .btn-default.active {
+    background-color: #7ab047;
+}
+
+.finance-fact {
+    margin-right: 26px;
+    display: inline-block;
+}
+
+    .finance-fact:last-child {
+        margin-right: 0;
+    }
+
+    .finance-fact img {
+        float: left;
+    }
+
+    .finance-fact p {
+        float: left;
+        font-size: 14px;
+        margin-top: 4px;
+        margin-left: 6px;
+        font-weight: 500;
+    }
+
+.finance-facts {
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1px solid #dce1e6;
+    border-radius: 3px;
+    padding: 20px;
+    padding-bottom: 10px;
+}
+
+.sh-marketing-text {
+    position: relative;
+}
+
+    .sh-marketing-text > span {
+        display: block;
+        text-align: right;
+        margin-right: 10px;
+        position: relative;
+        top: -10px;
+        float: right;
+    }
+
+@media screen and (min-width: 700px) {
+    .sh-marketing-text > span {
+        top: 10px;
+    }
+}
+
+.terms-conditions .label-sh-marketing {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background: #E5EAF0;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+
+    @media screen and (min-width: 767px) {
+        .sh-marketing-text {
+            padding-right: 55px;
+        }
+
+            .sh-marketing-text > span {
+                margin-right: 0px;
+            }
+
+        .terms-conditions .label-sh-marketing {
+            margin-top: 0px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            -webkit-transform: translate3d(0, -50%, 0);
+            -moz-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0);
+        }
+    }
+
+    .terms-conditions .label-sh-marketing input {
+    display: none;
+}
+
+    .terms-conditions .label-sh-marketing input + span {
+        display: block;
+        width: 38px;
+        height: 18px;
+        left: 1px;
+        top: 1px;
+        background: #f2f7fd;
+        border-radius: 15px;
+        position: relative;
+    }
+
+        .terms-conditions .label-sh-marketing input + span:after {
+            content: '';
+            height: 18px;
+            width: 18px;
+            background: #7ab047;
+            border-radius: 50%;
+            position: absolute;
+            top: 0px;
+            -webkit-transition: all ease-in-out 0.2s 0s;
+            -moz-transition: all ease-in-out 0.2s 0s;
+            transition: all ease-in-out 0.2s 0s;
+            left: 0;
+        }
+
+        .terms-conditions .label-sh-marketing input + span:before {
+            position: absolute;
+            vertical-align: middle;
+            line-height: 18px;
+            font-size: 14px;
+            transition: opacity ease-in-out 0.2s;
+            opacity: 1;
+        }
+
+    .terms-conditions .label-sh-marketing input:checked + span:before {
+        left: 5px;
+        content: '\2713 ';
+        color: #7ab047;
+    }
+
+    .terms-conditions .label-sh-marketing input:not(:checked) + span:before {
+        content: '\2716';
+        right: 5px;
+        color: #c21807;
+    }
+
+    .terms-conditions .label-sh-marketing input:not(:checked) + span:after {
+        background: #c21807;
+    }
+
+    .terms-conditions .label-sh-marketing input:checked + span:after {
+        left: 100%;
+        background: #7ab047;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        -moz-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+        .terms-conditions .label-sh-marketing input:required:invalid + span {
+            background-color: #ffa59c;
+        }
+
+.terms-conditions {
+    font-size: 12px;
+}
+
+.footer-steps-item {
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.footer-steps-item-text h4 {
+    font-weight: bold;
+    color: #9099a5;
+}
+
+.btn-submit-existing {
+    margin-top: 0;
+}
+
+.website-stat-left {
+    background-image: url(https://s3-eu-west-1.amazonaws.com/lead-generation-imagesbucket-19mw1y3yrtv38/3a832214-e4f7-4ae4-aed7-39ee583c3b89.png);
+}
+
+.website-stat-right {
+    background-image: url(https://s3-eu-west-1.amazonaws.com/lead-generation-imagesbucket-19mw1y3yrtv38/cfa1d2a3-30f5-417e-bf53-a7276b10e0f2.png);
+}
+
+.website-stat {
+    background-repeat: no-repeat;
+    width: 198px;
+    height: 194px;
+    background-size: cover;
+    position: absolute;
+}
+
+.website-stat-holder {
+    position: relative;
+}
+
+.website-stat-left {
+    left: -120px;
+    top: 100px;
+    padding-left: 70px;
+    padding-top: 38px;
+    padding-bottom: 70px;
+    padding-right: 20px;
+}
+
+.website-stat-right {
+    right: -110px;
+    top: 20px;
+    padding-left: 15px;
+    padding-top: 40px;
+    padding-bottom: 70px;
+    padding-right: 60px;
+}
+
+.website-stat-text {
+    color: #1d5298;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+.checkbox-label {
+    margin-right: 20px;
+}
+
+.postcode-lookup-list {
+    margin-top: 15px;
+}
+
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+}
+
+.step-help {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.js-form-area h1 {
+    font-size: 30px;
+    color: #1C539A;
+    color: var(--formAppPrimaryColour);
+}
+
+.js-form-area h2 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.js-form-area .dynamic-paragraph {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+.js-form-area .dynamic-subheading {
+    text-align: center;
+    font-size: 20px;
+}
+
+.field-required {
+    text-align: right;
+    color: #FF0000;
+}
+
+.button-list-holder {
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: hidden;
+}
+
+.button-list,
+.button-list-other {
+    border: 1px solid #DCE1E6;
+    height: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+    line-height: 50px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--formAppButtonListColour);
+    color: var(--formAppListButtonTextColour);
+}
+
+.custom-button-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+    .custom-button-content .button-list-holder {
+        width: 100%;
+        position: relative;
+    }
+
+        .custom-button-content .button-list-holder .button-list {
+            padding: 0;
+            padding-left: 20px;
+            padding-right: 20px;
+            height: auto;
+            line-height: 1.2;
+            vertical-align: middle;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            padding-bottom: 30px;
+            padding-top: 10px;
+        }
+
+            .custom-button-content .button-list-holder .button-list span {
+                font-weight: bold;
+            }
+
+            .custom-button-content .button-list-holder .button-list + span {
+                display: block;
+                margin-bottom: 10px;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate3d(-50%, 0, 0);
+                white-space: nowrap;
+            }
+
+            .custom-button-content .button-list-holder .button-list[data-selected=""] + span {
+                color: #fff;
+            }
+
+@media screen and (min-width: 767px) {
+    .custom-button-content .button-list-holder {
+        max-width: 25%;
+    }
+
+        .custom-button-content .button-list-holder .button-list span {
+            font-weight: normal;
+        }
+
+        .custom-button-content .button-list-holder .button-list {
+            padding-bottom: 0px;
+            height: 144px;
+        }
+
+            .custom-button-content .button-list-holder .button-list + span {
+                font-weight: bold;
+                white-space: normal;
+                margin-bottom: 20px;
+                position: relative;
+            }
+
+            .custom-button-content .button-list-holder .button-list[data-selected=""] + span {
+                color: #333;
+            }
+}
+
+.button-list[data-selected=""] {
+    background-color: #1C539A;
+    background-color: var(--formAppPrimaryColour);
+    color: #ffffff;
+}
+
+.form-label {
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+    color: #000000;
+    color: var(--formLabel);
+}
+
+.label-button {
+    color: var(--formLabel);
+    color: var(--formLabelInner);
+}
+
+.js-form-area input {
+    margin-bottom: 10px;
+}
+
+.button-stacked {
+    margin-bottom: 30px;
+}
+
+    .button-stacked:last-child {
+        margin-bottom: 0;
+    }
+
+.no-padding {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.label-button {
+    line-height: 58px;
+    border-left: 0;
+}
+
+.no-radius-left {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.no-radius-right {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.pound-icon {
+    position: absolute;
+    top: 11px;
+    left: 30px;
+    font-size: 30px;
+}
+
+.amount-input {
+    text-align: left;
+    padding-left: 45px;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome */
+    color: #DCE1E6;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #DCE1E6;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #DCE1E6;
+    opacity: 1;
+}
+
+:-moz-placeholder {
+    /* Firefox 4 - 18 */
+    color: #DCE1E6;
+    opacity: 1;
+}
+
+.js-addresses-container,
+.js-addresses-container-display,
+.js-employment-addresses-container,
+.js-employment-address-container,
+.js-employment-addresses-container-display,
+.js-employment-address-container-display,
+.js-employment-container {
+    padding: 15px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border: 1px solid #d8dfe7;
+    border-radius: 4px;
+}
+
+    .js-employment-container h3 {
+        margin-top: 0;
+    }
+
+.js-address-holder,
+.js-addresses-holder-display,
+.js-employment-address-holder,
+.js-employment-addresses-holder,
+.js-employment-address-holder-display,
+.js-employment-addresses-holder-display,
+.js-employment-holder {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.js-address,
+.js-employment {
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+    .js-employment span,
+    .js-address span {
+        font-size: 15px;
+    }
+
+@media (min-width: 768px) {
+    .js-employment span,
+    .js-address span {
+        font-size: 17px;
+    }
+}
+
+.js-employment strong {
+    font-size: 17px;
+}
+
+.edit-address,
+.edit-employment {
+    cursor: pointer;
+}
+
+.edit-details-button {
+    color: #0000ff;
+    cursor: pointer;
+    font-size: 15px;
+    font-style: normal;
+    position: relative;
+    left: 10px;
+}
+
+.edit-address-button:hover {
+    color: #000000;
+}
+
+.manual-address label {
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.manual-address input {
+    height: 40px;
+    font-size: 16px;
+}
+
+.update-address-row {
+    margin-top: 20px;
+}
+
+.update-current-address-btn {
+    margin-top: 0px;
+    white-space: normal;
+    line-height: 18px;
+    padding-top: 10px;
+    font-size: 13px;
+}
+
+.postcode-lookup-list .form-control {
+    font-size: 20px;
+}
+
+.manual-address label {
+    width: 100%;
+    text-align: center;
+}
+
+.form-display-none-temp {
+    display: none;
+}
+
+/*Progress steps CSS*/
+.form-holder .progress-container {
+    height: 25px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-holder .progress-step-container {
+    max-width: 500px;
+    width: 90%;
+    top: 10px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.form-holder .progress-line-container {
+    background-color: #D8DEE5;
+    background-color: var(--formAppProgressColour);
+    height: 2px;
+    width: 100%;
+}
+
+.form-holder .progress-line {
+    background: #1C539A;
+    background: var(--formAppPrimaryColour);
+    background-color: var(--formAppProgressColourActive);
+    height: 2px;
+    width: 0;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.form-holder .progress-bullet-container {
+    background: transparent;
+    width: 0;
+    height: 0;
+    overflow: visible;
+    position: relative;
+    display: block;
+}
+
+.form-holder .progress-bullet {
+    width: 22px;
+    height: 22px;
+    background: #D8DEE5;
+    background: var(--formAppProgressColour);
+    -moz-border-radius: 22px;
+    -webkit-border-radius: 22px;
+    border-radius: 22px;
+    -moz-transform: translate(-12px, -12px);
+    -ms-transform: translate(-12px, -12px);
+    -webkit-transform: translate(-12px, -12px);
+    transform: translate(-10px, -10px);
+    -moz-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+}
+
+    .form-holder .progress-bullet.active {
+        background-color: #1C539A;
+        background-color: var(--formAppPrimaryColour);
+        background-color: var(--formAppProgressColour);
+    }
+
+.address-textbox {
+    text-align: center;
+    font-size: 18px;
+}
+
+@media (min-width: 370px) {
+    .button-text {
+        font-size: 12px;
+        top: 75%;
+    }
+
+    .vehicle-buttons-holder {
+        margin: 15px 0 0 0;
+    }
+
+    .loan-amount-controls-holder,
+    .monthly-budget-amount-controls-holder {
+        margin-bottom: 10px;
+    }
+
+    .loan-amount-display,
+    .monthly-budget-amount-display {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 767px) {
+    #step5-valid-passport-form .button-list-holder {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    #step1-start-breadcrumb-form h2:first-of-type {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .form-header {
+        height: 90px;
+    }
+
+    .form-group {
+        margin-top: 10px;
+    }
+
+    .form-control {
+        height: 100px;
+        text-align: center;
+        font-size: 26px;
+    }
+
+    .label-button {
+        line-height: 90px;
+    }
+
+    .logo-holder {
+        margin-top: 25px;
+    }
+
+    .progress-step-container {
+        width: 100%;
+    }
+
+    h1 {
+        margin-top: 40px;
+    }
+
+    .js-form-area h2 {
+        font-size: 20px;
+    }
+
+    .update-current-address-btn {
+        line-height: 18px;
+        padding-top: 8px;
+        font-size: 16px;
+    }
+
+    .form-holder {
+        padding-top: 20px;
+    }
+
+    .helper-text {
+        margin-top: 36px;
+    }
+
+    .amount-input {
+        text-align: left;
+        padding-left: 75px;
+    }
+
+    .pound-icon {
+        position: absolute;
+        top: 31px;
+        left: 60px;
+        font-size: 30px;
+    }
+
+    .vehicle-buttons-holder .btn-circle-holder {
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-bottom: 10px;
+    }
+
+    .tick {
+        width: 30px;
+        height: 30px;
+        right: -8px;
+        top: -12px;
+        background-size: 100%;
+    }
+
+    .terms-conditions {
+        font-size: 14px;
+    }
+
+    .form-holder.submit-existing-v2 {
+        padding-bottom: 20px;
+    }
+
+        .form-holder.submit-existing-v2 .form-container {
+            padding-bottom: 20px;
+        }
+
+            .form-holder.submit-existing-v2 .form-container p {
+                text-align: center;
+                margin: 20px 0;
+                font-size: 12px;
+            }
+
+    .button-list,
+    .button-list-other {
+        font-size: 16px;
+        height: 60px;
+        line-height: 60px;
+    }
+
+    .button-list-holder {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .finance-facts {
+        width: 720px;
+        margin-bottom: 20px;
+        padding-left: 60px;
+    }
+
+    .button-text {
+        font-size: 16px;
+    }
+
+    .button-text {
+        font-size: 23px;
+    }
+
+    .vehicle-buttons-header {
+        margin-top: 30px;
+    }
+
+    .loan-amount-controls-holder,
+    .monthly-budget-amount-controls-holder {
+        margin-left: auto;
+        margin-right: auto;
+        width: 568px;
+    }
+
+    .loan-amount-display-holder,
+    .monthly-budget-amount-display-holder {
+        width: 446px;
+    }
+
+    h2 {
+        margin-top: 20px;
+    }
+
+    .trust-holder {
+        margin-top: 32px;
+        background-image: url(https://s3-eu-west-1.amazonaws.com/lead-generation-imagesbucket-19mw1y3yrtv38/8ec40997-f76e-4398-b54a-9f268ee0d04f.png);
+        width: 271px;
+        height: 25px;
+    }
+}
+
+.caravan-button-text {
+    text-align: center;
+    font-size: 7px;
+}
+
+@media (min-width: 375px) {
+    .caravan-button-text {
+        font-size: 10px;
+        line-height: 12px;
+    }
+}
+
+@media (min-width: 768px) {
+    .caravan-button-text {
+        font-size: 17px;
+        line-height: 18px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-logo {
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) {
+    .form-container {
+        padding-left: 75px;
+        padding-right: 75px;
+    }
+
+    .js-form-area h1 {
+        font-size: 48px;
+    }
+
+    .button-list,
+    .button-list-other {
+        height: 100px;
+        line-height: 100px;
+    }
+
+    .button-list,
+    .button-list-other {
+        font-size: 24px;
+    }
+
+    .finance-facts {
+        margin-left: auto;
+        margin-right: auto;
+        width: 960px;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        width: 993px;
+    }
+
+    .loan-amount-display-holder,
+    .monthly-budget-amount-display-holder {
+        width: 479px;
+    }
+
+    .loan-amount-controls-holder,
+    .monthly-budget-amount-controls-holder {
+        width: 601px;
+    }
+
+    .update-current-address-btn {
+        line-height: 40px;
+        padding-top: 8px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 991px) {
+    .website-stat-holder {
+        display: none;
+    }
+}
+
+.lp-image-holder {
+    width: 100%;
+    padding: 15px 0 0;
+    text-align: center;
+}
+
+    .lp-image-holder img {
+        width: auto;
+        max-width: 150px;
+        height: auto;
+        max-height: 80px;
+    }
+
+/*  PCA Predictive Address  */
+.data8-pa-visible {
+    display: block !important;
+}
+
+.data8-pa-countrylistcontainer {
+    position: absolute;
+    background-color: white;
+    z-index: 10000;
+    white-space: nowrap;
+}
+
+.data8-predictiveaddress {
+    margin: 0;
+}
+
+.data8-pa-countrylist {
+    display: none;
+    width: 100%;
+    margin: 0;
+    max-height: 150px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-top: 0;
+    border-bottom: 0;
+    overflow: auto;
+}
+
+    .data8-pa-countrylist ul {
+        list-style-type: none;
+        text-indent: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+        .data8-pa-countrylist ul li {
+            list-style-type: none;
+            text-indent: 0;
+            margin: 0;
+            padding: 2px;
+            cursor: pointer;
+        }
+
+            .data8-pa-countrylist ul li:hover {
+                background-color: #f8f8f8;
+            }
+
+            .data8-pa-countrylist ul li img {
+                float: left;
+                margin: 0;
+                width: 24px;
+                height: 24px;
+            }
+
+            .data8-pa-countrylist ul li span {
+                display: block;
+                margin-left: 30px;
+                padding-top: 2px;
+                height: 24px;
+                vertical-align: middle;
+            }
+
+.data8-pa-countryselector {
+    display: none;
+    width: 100%;
+    height: 28px;
+    cursor: pointer;
+    margin: 0;
+    text-align: center;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+}
+
+    .data8-pa-countryselector img {
+        width: 24px;
+        height: 24px;
+        margin: 0 !important;
+    }
+
+    .data8-pa-countryselector span {
+        display: block;
+    }
+
+    .data8-pa-countryselector:hover {
+        background-color: #f0f0f0;
+    }
+
+.data8-pa-countrycurrent {
+    float: right;
+    margin: 0;
+    border: 1px solid transparent;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+}
+
+    .data8-pa-countrycurrent:hover {
+        border: 1px solid #ccc;
+    }
+
+.data8-pa-autocompleteitemcontainer {
+    position: absolute;
+    right: 0;
+    background-image: url("https://s3-eu-west-1.amazonaws.com/lead-generation-imagesbucket-19mw1y3yrtv38/faf81479-b3d4-40a2-8cec-d6cac3c35613.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 30px;
+    padding-left: 10px;
+    color: grey;
+}
+
+.data8-pa-autocompleteitemtext {
+    display: inline-block;
+}
+
+.data8-pa-autocompleteitemwithcontainer .data8-pa-autocompleteitemtext {
+    margin-right: 100px;
+}
+
+.data8-predictiveaddress.data8-pa-loading {
+    background: white url("https://s3-eu-west-1.amazonaws.com/lead-generation-imagesbucket-19mw1y3yrtv38/a472f9ae-2d2f-4f9d-8def-f034b9a0c038.gif") right center no-repeat;
+}
+
+.data8-pa-autocomplete {
+    z-index: 1005;
+    display: none;
+    position: absolute;
+    background-color: #FAFAFA;
+    max-height: 15em;
+    overflow-y: scroll;
+    box-shadow: 4px 4px 5px #f0f0f0;
+}
+
+.data8-pa-autocompleteitem {
+    cursor: pointer;
+    padding: 7px;
+    border-bottom: 1px solid #ececec;
+}
+
+    .data8-pa-autocompleteitem:hover,
+    .data8-pa-autocompleteitem.data8-pa-focused {
+        background-color: #F0F0F0;
+    }
+
+.data8-pa-error {
+    font-weight: bold;
+    padding: 3px;
+    display: none;
+    background-color: tomato;
+}
+
+.data8-pa-title {
+    font-weight: bold;
+    padding: 3px;
+    display: none;
+}
+
+.data8-pa-aria {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*.ui-slider-handle.ui-state-default {
+    height: 36px;
+    width: 36px;
+    top: -12px;
+    margin-left: -16px;
+    
+    background: none;
+    background-color: #75B456;
+    border-radius: 50%;
+}
+.js-form-area h2:last-of-type {
+       font-weight: bold;
+}
+
+
+.step-1-background-image {
+    width: calc(100% + 62px);
+    margin-left: -31px;
+    background: #fff;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    position: relative;
+}
+    .step-1-background-image:before {
+        content: '';
+        position: absolute;
+        background-color: rgba(74, 113, 156, 0.5);
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        border-radius: 10px;
+    }
+    .step-1-background-image h1 {
+        margin-top: 10px;
+    }
+.js-btn-loan-increase,
+.js-btn-loan-decrease {
+    background-color: #fff;
+}
+#loan-amount-slider {
+    background-color: #fff;
+    height: 14px;
+}
+@media screen and (min-width: 768px) {
+    .step-1-background-image {
+        padding-left: 0px;
+        padding-right: 0px;
+        width: calc(100% + 100px);
+        margin-left: -50px;
+    }
+}
+.ui-widget-header {
+    height: 4px !important;
+    top: 5px !important;
+}*/
+/***** Cazana Vehicle look up *****/
+.vehicle-type-start .btn-get-started {
+    margin-top: 10px;
+}
+
+.vehicle-image img {
+    width: 100%;
+    height: auto;
+}
+
+.vehicle-make {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.vehicle-model {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.vehicle-make,
+.vehicle-price {
+    text-align: center;
+}
+
+.vehicle-price {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1C539A;
+    color: var(--formAppPrimaryColour);
+}
+
+.vehicle-text {
+    text-transform: capitalize;
+}
+
+.vehicle-info {
+    margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+    .vehicle-info > div {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .vehicle-make,
+    .vehicle-price {
+        text-align: left;
+    }
+}
+
+/**** End Cazana ****/
+body {
+    opacity: 0;
+    -webkit-transition: opacity ease-in-out 0.3s 0.2s;
+    -moz-transition: opacity ease-in-out 0.3s 0.2s;
+    transition: opacity ease-in-out 0.3s 0.2s;
+}
+
+/*SVG*/
+.vehicle-buttons-holder .btn-circle-holder {
+    cursor: pointer;
+}
+
+.vehicle-buttons-holder .btn-circle {
+    position: relative;
+}
+
+.vehicle-buttons-holder .button-text {
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    font-size: 13px;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    -moz-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+    z-index: 2;
+    top: auto;
+}
+
+@media screen and (min-width: 420px) {
+    .vehicle-buttons-holder .button-text {
+        bottom: 8%;
+        font-size: 18px;
+    }
+}
+
+.vehicle-buttons-holder .svg-image {
+    z-index: 0;
+    display: block;
+    width: 100%;
+    padding-bottom: 60%;
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid #D8DEE5;
+    border: 1px solid var(--formAppSvgBorderColour);
+    background: var(--formAppButtonListColour);
+}
+
+@media screen and (max-width: 550px) {
+    .vehicle-buttons-holder .svg-image {
+        padding-bottom: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .vehicle-buttons-holder .svg-image {
+        padding-bottom: 90%;
+    }
+}
+
+.form-holder [data-selected] .svg-image {
+    -webkit-transition: background ease-in-out 0.3s 0s, border ease-in-out 0.3s 0s;
+    -moz-transition: background ease-in-out 0.3s 0s, border ease-in-out 0.3s 0s;
+    transition: background ease-in-out 0.3s 0s, border ease-in-out 0.3s 0s;
+    background-color: #1c539a;
+    background-color: var(--formAppPrimaryColourHover);
+    background-color: var(--formAppButtonColour);
+    border: 1px solid #1c539a;
+    border: 1px solid var(--formAppPrimaryColourHover);
+    border: 1px solid var(--formAppButtonColour);
+}
+
+.vehicle-buttons-holder .image-area {
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.vehicle-buttons-holder svg {
+    max-width: 60%;
+    max-height: 42%;
+    height: 60%;
+    width: 80%;
+    margin-left: 20%;
+    margin-top: 11%;
+    -webkit-transition: all ease-in-out 0.3s 0s;
+    -moz-transition: all ease-in-out 0.3s 0s;
+    transition: all ease-in-out 0.3s 0s;
+}
+
+.vehicle-buttons-holder .van-svg {
+    max-height: 52%;
+    margin-top: 7%;
+}
+
+.vehicle-buttons-holder .bike-svg {
+    max-height: 50%;
+    margin-top: 10%;
+}
+
+.vehicle-buttons-holder .motorhome-svg {
+    max-height: 100%;
+    margin-top: 7%;
+}
+
+.vehicle-buttons-holder .campervan-svg {
+    max-height: 70%;
+    margin-top: 0%;
+    max-width: 53%;
+    margin-left: 24%;
+}
+
+.form-holder .active-switch .active-switch-svg {
+    display: none;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 26px;
+    margin: auto;
+    max-height: auto;
+    max-width: 100%;
+    height: auto;
+    z-index: 10;
+}
+
+.form-holder [data-selected] .active-switch .active-switch-svg {
+    display: block;
+}
+
+    .form-holder [data-selected] .active-switch .active-switch-svg .cls-1 {
+        fill: #1A539A;
+        fill: var(--formAppPrimaryColour);
+        stroke: #fff;
+        stroke: var(--formAppSvgColourActive);
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+    }
+
+    .form-holder [data-selected] .active-switch .active-switch-svg .cls-2 {
+        fill: #fff;
+        fill: var(--formAppSvgColourActive);
+    }
+
+.form-holder .vehicle-buttons-holder .caravan-text {
+    line-height: 1;
+    font-size: 11px;
+}
+
+
+@media screen and (min-width: 640px) {
+    .vehicle-buttons-holder svg {
+        height: 100%;
+        width: 100%;
+    }
+
+    .form-holder .vehicle-buttons-holder .caravan-text {
+        font-size: 16px;
+        bottom: 8%;
+    }
+}
+
+/* Add classes root colours to change */
+.form-holder .btn-get-started {
+    background-color: #7ab047;
+    color: white;
+}
+
+    .form-holder .btn-get-started:hover, .form-holder .btn-get-started:focus {
+        background-color: #649d42;
+        color: white;
+    }
+
+.form-holder .btn-default {
+    background-color: #7ab047;
+    background-color: var(--formAppSecondaryColour);
+    background-color: var(--formAppNextButtonColour);
+    color: white;
+    color: var(--formAppNextButtonFontColor);
+    -webkit-transition: all ease-in-out 0.3s 0s;
+    -moz-transition: all ease-in-out 0.3s 0s;
+    transition: all ease-in-out 0.3s 0s;
+}
+
+    .form-holder .btn-default:hover, .form-holder .btn-default:focus {
+        background-color: #6d9e3f;
+        background-color: var(--formAppSecondaryColourHover);
+        background-color: var(--formAppNextButtonColourHover);
+        color: white;
+        color: var(--formAppNextButtonFontColorHover);
+    }
+
+.form-holder .js-form-area h1 {
+    color: #1C539A;
+    color: var(--formAppPrimaryColour);
+    color: var(--formAppTitle);
+}
+
+.form-holder .button-list[data-selected=""] {
+    background-color: #1c539a;
+    background-color: var(--formAppPrimaryColour);
+    background-color: var(--formAppButtonColour);
+    background-color: var(--formAppListButtonColour);
+    border: 1px solid #1c539a;
+    border: 1px solid var(--formAppPrimaryColour);
+    border: 1px solid var(--formAppButtonColour);
+    border: 1px solid var(--formAppListButtonColour);
+    color: #ffffff;
+    color: var(--formAppButtonTextColourOpposite);
+    color: var(--formAppListButtonTextColourOpposite);
+}
+
+.form-holder .progress-line {
+    background: #1C539A;
+    background: var(--formAppPrimaryColour);
+    background: var(--formAppProgressColourActive);
+}
+
+.form-holder .progress-bullet.active {
+    background-color: #1C539A;
+    background-color: var(--formAppPrimaryColour);
+    background-color: var(--formAppProgressColourActive);
+}
+
+.form-holder .ui-widget-header {
+    background-color: #1C539A;
+    background-color: var(--formAppSecondaryColour);
+    background-color: var(--formAppSliderLine);
+}
+
+.form-holder .ui-slider-handle.ui-state-default.ui-corner-all {
+    background: #1C539A;
+    background: var(--formAppPrimaryColour);
+    background: var(--formAppSliderCircle);
+    border-radius: 50px;
+}
+
+.form-holder .pound-icon {
+    color: var(--formAppLoanInput);
+}
+
+.form-holder .car-svg .cls-1, .form-holder .van-svg .cls-1 {
+    fill: none;
+    stroke: #ec6807;
+    stroke: var(--formAppSvgColour);
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+}
+
+.form-holder .campervan-svg .cls-1 {
+    fill: none;
+    stroke: #ec6807;
+    stroke: var(--formAppSvgColour);
+    stroke-miterlimit: 10;
+    stroke-width: 4px;
+}
+
+.form-holder .motorhome-svg .cls-1 {
+    fill: none;
+    stroke: #ec6807;
+    stroke: var(--formAppSvgColour);
+    stroke-miterlimit: 10;
+    stroke-width: 3px;
+}
+
+.form-holder [data-selected] .car-svg .cls-1, .form-holder [data-selected] .van-svg .cls-1, .form-holder [data-selected] .campervan-svg .cls-1 {
+    stroke: #fff;
+    stroke: var(--formAppSvgColourActive);
+}
+
+.form-holder .bike-svg .cls-1, .form-holder .caravan-svg .cls-1, .form-holder .horsebox-svg .cls-1, .form-holder .motorhome-svg .cls-1, .pound-svg .cls-1 {
+    fill: #ec6807;
+    fill: var(--formAppSvgColour);
+}
+
+.form-holder [data-selected] .bike-svg .cls-1, .form-holder [data-selected] .caravan-svg .cls-1, .form-holder [data-selected] .horsebox-svg .cls-1, .form-holder [data-selected] .motorhome-svg .cls-1, .campervan-svg .cls-1, .form-holder [data-selected] .pound-svg .cls-1 {
+    fill: #fff;
+    fill: var(--formAppSvgColourActive);
+}
+
+.form-holder .loan-amount-display,
+.form-holder .monthly-budget-amount-display {
+    color: #1c5399;
+    color: var(--formAppPrimaryColour);
+    color: var(--formAppLoanInput);
+}
+
+.coloured-text {
+    color: #1c5399;
+    color: var(--formVatColour);
+}
+
+.form-holder .hatchback-svg .cls-1,
+.form-holder .saloon-svg .cls-1,
+.form-holder .coupe-svg .cls-1,
+.form-holder .estate-svg .cls-1,
+.form-holder .suv-svg .cls-1 {
+    fill-rule: evenodd;
+    fill: #1c539a;
+    fill: var(--formAppPrimaryColour);
+}
+
+.form-holder .mpv-svg .cls-1,
+.form-holder .convertable-svg .cls-1,
+.form-holder .pickup-svg .cls-1 {
+    fill-rule: evenodd;
+    fill: #1c539a;
+    fill: var(--formAppPrimaryColour);
+}
+
+.form-holder .not-sure-svg {
+    fill: #1c539a;
+    fill: var(--formAppPrimaryColour);
+}
+
+.form-holder [data-selected] .hatchback-svg .cls-1,
+.form-holder [data-selected] .saloon-svg .cls-1,
+.form-holder [data-selected] .coupe-svg .cls-1,
+.form-holder [data-selected] .estate-svg .cls-1,
+.form-holder [data-selected] .suv-svg .cls-1,
+.form-holder [data-selected] .mpv-svg .cls-1,
+.form-holder [data-selected] .convertable-svg .cls-1,
+.form-holder [data-selected] .pickup-svg .cls-1,
+.form-holder [data-selected] .not-sure-svg {
+    fill: #fff;
+}
+
+a {
+    color: var(--formAppHyperLinkColour);
+}
+
+    a:hover, a:focus {
+        color: var(--formAppHyperLinkHoverColour);
+    }
+
+.form-group [name="ShortFormEnquiry"] {
+    text-align: left;
+    resize: none;
+    font-size: 18px;
+    height: 7em;
+}
+
+.dob-seperated .input-wrap {
+    text-align: center;
+    position: relative;
+    background-color: var(--formAppButtonListColour);
+}
+
+    .dob-seperated .input-wrap > span {
+        position: absolute;
+        display: block;
+        width: 100%;
+        color: #9999A6;
+        font-weight: bold;
+        text-align: center;
+        height: 65px;
+        font-size: 20px;
+        line-height: 65px;
+        border: 1px solid #d8dfe7;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    }
+
+        .dob-seperated .input-wrap > span > span {
+            margin-right: 0px;
+            display: inline-block;
+            width: calc(100% / 3 - 15px);
+            -webkit-transition: color ease-in-out 0.3s 0s;
+            -moz-transition: color ease-in-out 0.3s 0s;
+            transition: color ease-in-out 0.3s 0s;
+        }
+
+@media screen and (min-width: 767px) {
+    .dob-seperated .input-wrap > span {
+        height: 100px;
+        font-size: 26px;
+        line-height: 100px;
+    }
+}
+
+.dob-seperated .input-wrap input {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 0;
+    width: calc(100% / 3);
+    margin: 0;
+    padding: 0;
+    border: none;
+    position: relative;
+    background-color: transparent;
+    z-index: 1;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+    .dob-seperated .input-wrap input:nth-of-type(1).completed ~ span > span:nth-of-type(1),
+    .dob-seperated .input-wrap input:nth-of-type(1):focus ~ span > span:nth-of-type(1) {
+        color: transparent;
+    }
+
+    .dob-seperated .input-wrap input:nth-of-type(2).completed ~ span > span:nth-of-type(2),
+    .dob-seperated .input-wrap input:nth-of-type(2):focus ~ span > span:nth-of-type(2) {
+        color: transparent;
+    }
+
+    .dob-seperated .input-wrap input:nth-of-type(3).completed ~ span > span:nth-of-type(3),
+    .dob-seperated .input-wrap input:nth-of-type(3):focus ~ span > span:nth-of-type(3) {
+        color: transparent;
+    }
+
+.all-vechical-buttons {
+    max-width: 540px;
+    margin: auto;
+}
+
+    .all-vechical-buttons label {
+        cursor: pointer;
+        width: 33.33%;
+        width: calc(100% / 3 - 10px);
+        margin-left: 5px;
+        margin-right: 5px;
+        position: relative;
+        border: 1px solid #D8DEE5;
+        border-radius: 4px;
+    }
+
+@media screen and (min-width: 567px) {
+    .all-vechical-buttons label {
+        width: calc(100% / 3 - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.all-vechical-buttons label input {
+    display: none;
+}
+
+.all-vechical-buttons label .label-text {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    color: #1C539A;
+    color: var(--formAppButtonColour);
+}
+
+@media screen and (min-width: 567px) {
+    .all-vechical-buttons label .label-text {
+        bottom: 5px;
+    }
+}
+
+.all-vechical-buttons label .image-area {
+    padding-bottom: 70%;
+    vertical-align: top;
+    display: block;
+    position: relative;
+}
+
+    .all-vechical-buttons label .image-area svg {
+        position: absolute;
+        max-width: 80%;
+        max-height: 55%;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        -moz-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+        fill: #1C539A;
+        fill: var(--formAppPrimaryColour);
+    }
+
+.all-vechical-buttons label input:checked ~ .image-wrap svg {
+    fill: #fff;
+    fill: var(--formAppButtonTextColourOpposite);
+}
+
+.all-vechical-buttons label .active-switch {
+    display: none;
+    font-size: 24px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background: #1C539A;
+    background: var(--formAppPrimaryColour);
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-transform: translate3d(50%, -50%, 0);
+    -moz-transform: translate3d(50%, -50%, 0);
+    transform: translate3d(50%, -50%, 0);
+    border: 2px solid #fff;
+    border: 2px solid var(--formAppButtonTextColourOpposite);
+}
+
+    .all-vechical-buttons label .active-switch::after {
+        content: '\2713';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 0.6em;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        -moz-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+        color: #fff;
+        color: var(--formAppButtonTextColourOpposite);
+    }
+
+.all-vechical-buttons label input:checked ~ .active-switch {
+    display: block;
+}
+
+.all-vechical-buttons label input:checked ~ .image-wrap .image-area {
+    background: #1C539A;
+    background: var(--formAppPrimaryColour);
+}
+
+.all-vechical-buttons label input:checked ~ .label-text {
+    color: #fff;
+    color: var(--formAppButtonTextColourOpposite);
+}
+
+.all-vechical-buttons label .question-mark-svg .image-area svg {
+    top: 38%;
+}
+
+
+.dob-buttons .date-of-birth {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+    .dob-buttons .date-of-birth button {
+        height: 40px;
+        text-align: center;
+        margin-bottom: 00px;
+        line-height: 40px;
+        width: 40px;
+        letter-spacing: 0.2em;
+        margin-right: 5px;
+        margin-left: 5px;
+        background-color: transparent;
+        border: none;
+    }
+
+        .dob-buttons .date-of-birth button:nth-of-type(2) {
+            width: 40px;
+        }
+
+        .dob-buttons .date-of-birth button:last-of-type {
+            width: 80px;
+        }
+
+        .dob-buttons .date-of-birth button span.active {
+            position: relative;
+            border-bottom: 1px dotted rgba(28,83,154,0.6);
+        }
+
+.dob-buttons .bod-day-of-month .button-list-holder {
+    width: 20%;
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.dob-buttons .bod-month-of-year {
+    display: none;
+}
+
+    .dob-buttons .bod-month-of-year .button-list-holder {
+        width: 33.333%;
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+.dob-buttons .bod-year {
+    display: none;
+}
+
+    .dob-buttons .bod-year .year-groupings {
+        width: 100%;
+        display: block;
+    }
+
+        .dob-buttons .bod-year .year-groupings button {
+            display: block;
+            text-align: center;
+            width: 100%;
+            width: calc(100% - 10px);
+            border: 1px solid #DCE1E6;
+            height: 50px;
+            text-align: center;
+            margin-bottom: 10px;
+            line-height: 50px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: auto;
+            -moz-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            background: transparent;
+        }
+
+    .dob-buttons .bod-year .button-list-holder {
+        width: 33.333%;
+        float: left;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+@media (min-width: 992px) {
+    .dob-buttons #step2-dob-form .button-list-holder .button-list {
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
+    }
+
+    .dob-buttons .bod-year .year-groupings button {
+        font-size: 20px;
+    }
+}
+
+.dob-buttons .bod-year .year-ranges {
+    display: none;
+}
+
+#step2-dob-form.dob-buttons .button-list.disable {
+    background: rgba(210,210,210, 0.4);
+    color: rgba(0,0,0,0.6);
+    text-decoration: line-through;
+}
+
+#step2-dob-form.dob-buttons .button-list-holder {
+    position: relative;
+}
+
+#step2-dob-form.dob-buttons .button-list.disable + span {
+    cursor: not-allowed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.dont-know-amount {
+    margin-top: 15px;
+}
+
+    .dont-know-amount button {
+        position: relative;
+        vertical-align: middle;
+        position: relative;
+        background: none;
+        border: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        -webkit-appearance: none;
+        padding: 0;
+        color: var(--formHeaderColour);
+    }
+
+        .dont-know-amount button:active,
+        .dont-know-amount button:focus {
+            outline: none;
+        }
+
+    .dont-know-amount div {
+        position: absolute;
+        height: 1.8em;
+        width: 1.8em;
+        border-radius: 3px;
+        border: 1px solid #d8dfe7;
+        display: inline-block;
+        vertical-align: middle;
+        top: 50%;
+        -webkit-transform: translate3d(0, -50%, 0);
+        -moz-transform: translate3d(0, -50%, 0);
+        transform: translate3d(0, -50%, 0);
+    }
+
+    .dont-know-amount button:focus div,
+    .dont-know-amount button:active div {
+        box-shadow: 0 0 2px 0px var(--formAppPrimaryColour)
+    }
+
+    .dont-know-amount button.active div:after {
+        content: '\2713';
+        font-size: 1.2em;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: block;
+        -webkit-transform: translate3d(0, -50%, 0);
+        -moz-transform: translate3d(0, -50%, 0);
+        transform: translate3d(0, -50%, 0);
+    }
+
+    .dont-know-amount span {
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 2.2em;
+        line-height: 2.2;
+    }
+
+.vehicle-type-selector {
+    max-width: 540px;
+}
+
+    .vehicle-type-selector .button-list-holder {
+        width: 33%;
+        float: left;
+    }
+
+    .vehicle-type-selector .button-list {
+        height: 65px;
+        overflow: hidden;
+        position: relative;
+        left: 0%;
+        width: 100% !important;
+        line-height: 1.1 !important;
+        transform: translate(0,0) !important;
+        width: 33%;
+        transition: all 0.2s ease-in-out;
+    }
+
+@media screen and (min-width: 370px) {
+    .vehicle-type-selector .button-list {
+        height: 85px;
+    }
+}
+
+@media screen and (min-width: 440px) {
+    .vehicle-type-selector .button-list {
+        height: 100px;
+    }
+}
+
+@media screen and (min-width: 567px) {
+    .vehicle-type-selector .button-list {
+        height: 125px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .vehicle-type-selector .button-list {
+        height: 145px;
+    }
+}
+
+
+
+.vehicle-type-selector .button-list .image-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+.vehicle-type-selector .button-list .image-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 1.2;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+.vehicle-type-selector .button-list .image-wrap {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.vehicle-type-selector .button-list[data-selected=""] .image-wrap {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.vehicle-type-selector .button-list .button-text {
+    color: var(--formAppPrimaryColour);
+    color: var(--formAppButtonTextColour);
+    z-index: 2;
+}
+
+.vehicle-type-selector .button-list[data-selected=""] .button-text {
+    color: var(--formAppButtonTextColourOpposite);
+}
+
+.vehicle-type-selector .button-list svg {
+    position: relative;
+    max-width: 75%;
+    width: 155px;
+    top: 15%;
+    /*fill: var(--formAppListButtonTextColour);*/
+}
+
+    .vehicle-type-selector .button-list svg .cls-1 {
+        stroke: var(--formAppSvgColour);
+        fill: var(--formAppSvgColour);
+    }
+
+.vehicle-type-selector .button-list[data-selected=""] .cls-1 {
+    stroke: var(--formAppSvgColourActive);
+    fill: var(--formAppSvgColourActive);
+}
+
+.vehicle-type-selector .button-list .question-mark-svg svg {
+    max-width: 16px;
+}
+
+@media screen and (min-width: 567px) {
+    .vehicle-type-selector .button-list .question-mark-svg svg {
+        max-width: 26px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .vehicle-type-selector .button-list .question-mark-svg svg {
+        max-width: 32px;
+    }
+}
+
+.vehicle-type-selector .button-list .question-mark-svg + .button-text {
+    line-height: 1;
+    width: 100%;
+}
+
+
+#step-employment-occupation select {
+    height: 50px;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+textarea.business-textarea {
+    resize: none;
+    height: 150px;
+    font-size: 20px;
+    text-align: left;
+}
+
+
+.pro-bullet-points ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.pro-bullet-points li {        
+    margin-bottom: 10px;
+    font-size: 17px;
+    padding: 0;
+}
+    .pro-bullet-points li svg {
+        font-size: 1.25em;
+        width: 1.25em;
+        height: 1em;
+        fill: var(--formAppPrimaryColour);
+        display: inline;
+        vertical-align: top;
+    }
+
+    
+    .pro-bullet-points ul li p {
+    color: var(--formAppTitle);
+    margin-bottom: 0;
+    font-size: 0.8em;
+
+}
+    @media screen and (max-width: 767px) {
+        .pro-bullet-points ul li   {
+            text-align: center;
+        }
+            
+    }
+    
+ 
+    /*Just Text Vehicle Choice*/
+
+.just-text-vehicle .image-included {
+    text-align: center;
+    background-color: var(--formAppButtonListColour);
+    color: var(--formTextColour);
+    border: 1px solid #DCE1E6;
+    /*border: 1px solid var(--formAppButtonListColour);*/
+    border-radius: 5px;
+    height: 60px;
+    line-height: 60px;
+}
+
+    .just-text-vehicle .image-included[data-selected] {
+        text-align: center;
+        background-color: var(--formAppPrimaryColour);
+        color: var(--formAppButtonTextColourOpposite);
+        border: 1px solid var(--formAppPrimaryColour);
+    }
+
+    .just-text-vehicle .image-included .image-wrap,
+    .just-text-vehicle .image-included .active-switch {
+        display: none;
+    }
+
+    .just-text-vehicle .image-included .button-text {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        -webkit-transform: none;
+        -moz-transform: none;
+        transform: none;
+        color: var(--formTextColour);
+    }
+
+    .just-text-vehicle .image-included[data-selected] .button-text {
+        color: var(--formAppButtonTextColourOpposite);
+    }
+
+/* 
+    -------------
+    Start Theme 2
+    -------------
+*/
+.theme-2 .vehicle-type-selector .image-wrap {
+    display: none;
+}
+
+.theme-2 .form-holder > .container {
+    max-width: 800px !important;
+    width: 100% !important;
+}
+
+.theme-2 .form-container {
+    max-width: 800px;
+}
+
+.theme-2 .loan-amount-controls-holder,
+.theme-2 .monthly-budget-amount-controls-holder {
+    width: 100%;
+    position: relative;
+}
+
+.theme-2 .form-holder .btn-default {
+    background-color: var(--formAppPrimaryColour);
+    border-radius: 0;
+}
+
+.theme-2 .form-holder .btn-get-started {
+    height: auto;
+    padding-bottom: 15px;
+}
+
+    .theme-2 .form-holder .btn-get-started span {
+        display: block;
+        font-size: 0.8em;
+        font-weight: lighter;
+    }
+
+.theme-2 .button-list[data-selected] {
+    border: 1px solid var(--formAppPrimaryColour);
+}
+
+.theme-2 .button-list {
+    border: 1px solid var(--formAppButtonListColour);
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 44px;
+    height: 44px;
+}
+
+.theme-2 h1 {
+    font-size: 48px;
+}
+
+.theme-2 h2 {
+    font-size: 18px;
+}
+
+@media screen and (max-width: 767px) {
+    .theme-2 h1 {
+        font-size: 30px;
+    }
+
+    .theme-2 h2 {
+        font-size: 16px;
+    }
+}
+
+
+.theme-2 #step5-valid-passport-form h2,
+.theme-2 #step1-start-breadcrumb-form h2,
+.theme-2 #step4-driving-license-form h2,
+.theme-2 #step6-employment-status-form h2,
+.theme-2 #step8-employment-years-form h2,
+.theme-2 #step10-postcode-entry-form h2,
+.theme-2 #step11-residential-status-form h2,
+.theme-2 #step12-address-years-form {
+    margin-bottom: 25px;
+}
+
+    .theme-2 #step1-start-breadcrumb-form h2.vehicle-buttons-header {
+        margin-bottom: 15px;
+    }
+
+.theme-2 #step7-employer-form label,
+.theme-2 #step13-firstname-surname-form label,
+.theme-2 #step14-submit-breadcrumb-form .js-mobile-form-group label,
+.theme-2 #step14-submit-breadcrumb-form label[for="Email"] {
+    display: none;
+}
+
+.theme-2 .manual-address {
+    margin-top: 25px;
+}
+
+.theme-2 #step7-employer-form [name="JobTitle"] {
+    margin-top: 25px;
+}
+
+    .theme-2 #step7-employer-form [name="JobTitle"] + span {
+        margin-bottom: 25px;
+    }
+
+@media screen and (max-width: 860px) {
+
+    .theme-2 .button-list-holder .button-list {
+        margin-bottom: 0;
+    }
+}
+
+.theme-2 .dob-buttons .button-list-holder .button-list {
+    margin-bottom: 0;
+}
+
+
+.theme-2 .button-list-holder {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 992px) {
+    .theme-2 .button-list {
+        line-height: 44px;
+        height: 44px;
+    }
+}
+
+.theme-2 .image-included {
+    text-align: center;
+    background-color: var(--formAppButtonListColour);
+    color: var(--formTextColour);
+    border: 1px solid var(--formAppButtonListColour);
+    border-radius: 3px;
+}
+
+    .theme-2 .image-included[data-selected] {
+        text-align: center;
+        background-color: var(--formBackgroundColour);
+        color: var(--formAppPrimaryColour);
+        border: 1px solid var(--formAppPrimaryColour);
+    }
+
+    .theme-2 .image-included .image-wrap,
+    .theme-2 .image-included .active-switch {
+        display: none;
+    }
+
+    .theme-2 .image-included .button-text {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        -webkit-transform: none;
+        -moz-transform: none;
+        transform: none;
+        color: var(--formTextColour);
+    }
+
+    .theme-2 .image-included[data-selected] .button-text {
+        color: var(--formAppPrimaryColour);
+    }
+
+.theme-2 #step2-dob-form .col-sm-5,
+.theme-2 #step7-employer-form .col-md-6,
+.theme-2 #step9-monthly-income-form .col-sm-6,
+.theme-2 #step10-postcode-entry-form .col-sm-7 {
+    width: 100% !important;
+}
+
+.theme-2 .form-control,
+.theme-2 .dob-seperated .input-wrap > span {
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+}
+
+.theme-2 #step9-monthly-income-form .form-group > .col-sm-12 {
+    position: relative;
+}
+
+.theme-2 #step9-monthly-income-form {
+    vertical-align: middle;
+}
+
+    .theme-2 #step9-monthly-income-form input {
+        margin-bottom: 0;
+        margin-top: 0;
+        padding-left: 45px;
+        padding-right: 0;
+    }
+
+    .theme-2 #step9-monthly-income-form .pound-icon {
+        top: 50%;
+        width: 45%;
+        text-align: right;
+        -webkit-transform: translate3d(0%, -50%, 0);
+        -moz-transform: translate3d(0%, -50%, 0);
+        transform: translate3d(0%, -50%, 0);
+        padding-right: 5px;
+        left: 0;
+        font-size: 18px;
+    }
+
+    .theme-2 #step9-monthly-income-form .amount-input {
+        padding-left: 45%;
+        text-align: left;
+    }
+
+.theme-2 #step8-employment-years-form .center-block.col-sm-9,
+.theme-2 #step12-address-years-form .center-block.col-sm-9 {
+    width: 100%;
+}
+
+    .theme-2 #step8-employment-years-form .center-block.col-sm-9 .form-group,
+    .theme-2 #step12-address-years-form .center-block.col-sm-9 .form-group {
+        width: 50%;
+        padding-left: 15px;
+        padding-right: 15px;
+        float: left;
+    }
+
+@media screen and (max-width: 460px) {
+    .theme-2 #step8-employment-years-form .center-block.col-sm-9 .form-group,
+    .theme-2 #step12-address-years-form .center-block.col-sm-9 .form-group {
+        width: 100%;
+    }
+}
+
+.theme-2 #step8-employment-years-form .center-block.col-sm-9 .form-group .no-padding,
+.theme-2 #step12-address-years-form .center-block.col-sm-9 .form-group .no-padding {
+    width: 100%;
+    position: relative;
+}
+
+    .theme-2 #step8-employment-years-form .center-block.col-sm-9 .form-group .no-padding input,
+    .theme-2 #step8-employment-years-form .center-block.col-sm-9 .form-group .no-padding label,
+    .theme-2 #step12-address-years-form .center-block.col-sm-9 .form-group .no-padding input,
+    .theme-2 #step12-address-years-form .center-block.col-sm-9 .form-group .no-padding label {
+        width: 100%;
+    }
+
+    .theme-2 #step8-employment-years-form .center-block.col-sm-9 .form-group .no-padding input,
+    .theme-2 #step12-address-years-form .center-block.col-sm-9 .form-group .no-padding input {
+        position: absolute;
+        width: 50%;
+        top: 2px;
+        right: 1px;
+        z-index: 2;
+        border: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        height: 48px;
+        line-height: 48px;
+        font-size: 18px;
+        text-align: left;
+        padding-left: 5px;
+        padding-right: 0;
+    }
+
+    .theme-2 #step8-employment-years-form .center-block.col-sm-9 .form-group .no-padding label,
+    .theme-2 #step12-address-years-form .center-block.col-sm-9 .form-group .no-padding label {
+        text-align: right;
+        border-radius: 3px;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-right: 50%;
+        padding-right: calc(50% + 5px);
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+        padding-top: 0;
+        padding-bottom: 0;
+        border: 1px solid #ccc !important;
+        color: var(--formAppPrimaryColour);
+    }
+
+/*Hide progress bullets */
+.theme-2 .progress-step-container {
+    width: 100%;
+    position: relative;
+}
+
+.theme-2 .progress-line-container,
+.theme-2 .progress-line {
+    height: 3px;
+    position: relative;
+}
+
+.theme-2 .progress-step-container:before {
+}
+
+@media screen and (max-width: 500px) {
+    .theme-2 .progress-step-container:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: var(--formAppProgressColour);
+        width: 100%;
+        height: 100%;
+        width: calc(100% + 95px);
+    }
+}
+
+.theme-2 .progress-line div {
+    background-image: url(https://s3-eu-west-1.amazonaws.com/lead-generation-imagesbucket-19mw1y3yrtv38/0037ba23-0a4b-4a22-a93c-152205ecbe94/qcf-progress.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 36px;
+    width: 95px;
+    content: '';
+    display: block;
+    margin-top: -33px;
+    left: 100%;
+}
+
+.theme-2 .progress-bullet-container {
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .theme-2 .progress-step-container {
+        max-width: calc(100% - 95px);
+        margin-left: 0;
+    }
+
+        .theme-2 .progress-step-container:after {
+            content: '';
+            height: 100%;
+            width: 150%;
+            width: calc(100% + 95px);
+            background: var(--formAppProgressColour);
+            left: 0;
+            top: 0;
+            position: absolute;
+            z-index: -1;
+        }
+}
+
+.theme-2 .progress-line svg {
+    display: block;
+    position: absolute;
+    height: 36px;
+    width: 95px;
+    content: '';
+    display: block;
+    margin-top: -33px;
+    left: 100%;
+    left: calc(100% - 2px);
+}
+
+    .theme-2 .progress-line svg .cls-1 {
+        fill: var(--formGlobalBackgroundColour);
+    }
+
+    .theme-2 .progress-line svg .cls-2 {
+        fill: var(--formAppPrimaryColour);
+    }
+
+.theme-2 .checkbox label {
+    position: relative;
+}
+
+.theme-2 .input-check-box {
+    position: absolute;
+    left: 0;
+    height: 1em;
+    width: 1em;
+    top: 0.2em;
+    border-radius: 3px;
+    border: 1px solid #d8dfe7;
+    display: inline-block;
+    vertical-align: middle;
+    background: var(--formAppButtonListColour);
+    vertical-align: middle;
+}
+
+.theme-2 input.check-box-input:checked + .input-check-box:after {
+    content: '\2713';
+    font-size: 0.7em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    display: block;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    text-align: center;
+}
+
+.theme-2 input.check-box-input {
+    display: none;
+}
+
+    .theme-2 input.check-box-input:focus + .input-check-box,
+    .theme-2 input.check-box-input:active + .input-check-box {
+        box-shadow: 0 0 2px 0px var(--formAppPrimaryColour)
+    }
+
+
+/*Start Hide slider controls */
+.theme-2 .loan-amount-display-holder,
+.theme-2 .monthly-budget-amount-display-holder {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+    .theme-2 .loan-amount-display-holder:before,
+    .theme-2 .monthly-budget-amount-display-holder:before {
+        content: '\00a3';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 35px;
+        color: var(--formAppPrimaryColour);
+        font-size: 26px;
+        transform: translate3d(0%, -50%, 0);
+        transform: translate3d(0%, -50%, 0);
+        transform: translate3d(0%, -50%, 0);
+    }
+
+.theme-2 .loan-amount-display,
+.theme-2 .monthly-budget-amount-display,
+.theme-2 .btn-loan-change,
+.theme-2 .btn-monthly-budget-amount-change,
+.theme-2 #loan-amount-slider,
+.theme-2 #monthly-budget-amount-slider {
+    display: none;
+}
+
+.theme-2 .loan-amount-display,
+.theme-2 .monthly-budget-amount-display {
+    padding-right: 0;
+    padding-left: 10%;
+    margin-bottom: 0;
+}
+
+.theme-2 .loan-amount-display-holder input,
+.theme-2 .monthly-budget-amount-display-holder input {
+    text-align: left;
+    padding: 0px 0px 0 55px;
+    color: var(--formTextColour);
+    font-size: 26px;
+}
+
+.theme-2 .form-holder .loan-amount-display-holder input:first-letter,
+.theme-2 .form-holder .monthly-budget-amount-display-holder input:first-letter {
+    color: #000;
+}
+
+
+.theme-2 .loan-amount-controls-holder .js-loan-amount-label,
+.theme-2 .monthly-budget-amount-controls-holder .js-monthly-budget-amount-label {
+    position: absolute;
+    width: 95%;
+    width: calc(100% - 10px);
+    margin: auto;
+    top: 5%;
+    top: calc(0% + 5px);
+    height: 90%;
+    height: calc(100% - 10px);
+    border-color: transparent;
+    padding-left: 0;
+    text-align: center;
+}
+/*End Hide slider controls */
+
+.theme-2 .dob-buttons .bod-day-of-month p span,
+.theme-2 .dob-buttons .bod-month-of-year p span,
+.theme-2 .dob-buttons .bod-year p span,
+.theme-2 .coloured-text {
+    color: var(--formAppPrimaryColour) !important;
+}
+
+.theme-2 button.postcode-lookup,
+.theme-2 button.enter-address-manually {
+    border-color: var(--formAppPrimaryColour);
+    color: var(--formAppPrimaryColour);
+    position: relative;
+}
+    /*.theme-2 button.postcode-lookup:before {
+    content: 'or';
+    left: -7px;
+    position: absolute;
+}*/
+    .theme-2 button.postcode-lookup:hover,
+    .theme-2 button.postcode-lookup:active,
+    .theme-2 button.postcode-lookup:focus,
+    .theme-2 button.enter-address-manually:hover,
+    .theme-2 button.enter-address-manually:active,
+    .theme-2 button.enter-address-manually:focus {
+        color: var(--formAppPrimaryColourHover);
+        border-color: transparent;
+        background-color: transparent;
+    }
+
+.theme-2 .form-holder {
+    padding-top: 30px !important;
+}
+
+
+
+/*
+    Images to show for Theme-2 for Luv
+*/
+.theme-2 .vehicle-type-selector:not(.show-images) .button-text, .theme-2 .vehicle-type-selectorr:not(.show-images) .button-list .question-mark-svg + .button-text {
+    position: relative;
+    transform: translate(0,0);
+    top: 0;
+    left: 0;
+    line-height: 44px;
+}
+
+.theme-2 .vehicle-type-selector.show-images .image-wrap {
+    display: block;
+}
+
+.theme-2 .vehicle-type-selector.show-images .button-list {
+    height: 125px;
+}
+
+    .theme-2 .vehicle-type-selector.show-images .button-list[data-selected] svg .cls-1 {
+        fill: var(--formAppPrimaryColour);
+        stroke: var(--formAppPrimaryColour);
+    }
