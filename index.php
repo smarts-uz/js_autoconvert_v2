@@ -4592,25 +4592,26 @@
                                         });
                                         data.Applicants.push(singleApplicantData)
                                         console.log('collected form data=> ',JSON.stringify(data))
-                                        async function postData(url = '', data = {}) {
+                                        async function postData(url = '', postData = {}) {
                                              // Default options are marked with *
                                              const response = await fetch(url, {
                                              method: 'POST', // *GET, POST, PUT, DELETE, etc.
-                                             // no-cors, *cors, same-origin
+                                             mode: 'no-cors',// no-cors, *cors, same-origin
                                              cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
                                              credentials: 'same-origin', // include, *same-origin, omit
                                              headers: {
+                                            'Access-Control-Allow-Origin': '*',
                                             'Content-Type': 'application/json', // 'Content-Type': 'application/x-www-form-urlencoded',
                                             'X-ApiKey': '19ff541e-b45e-4ac5-8cda-dc457868211b',
                                              },
                                              redirect: 'follow', // manual, *follow, error
                                              referrerPolicy: 'no-referrer', // no-referrer, *client
-                                             body: JSON.stringify(data) // body data type must match "Content-Type" header
+                                             body: JSON.stringify(postData) // body data type must match "Content-Type" header
                                              });
                                              return await response.json(); // parses JSON response into native JavaScript objects
                                             }
 
-                                        postData("https://api.autoconvert.co.uk/application/submit", JSON.stringify(data))
+                                        postData("https://api.autoconvert.co.uk/application/submit?=", data)
                                         .then((response) => {
                                         console.log(response); // JSON data parsed by `response.json()` call
                                         });
