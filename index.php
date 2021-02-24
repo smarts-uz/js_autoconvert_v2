@@ -3591,7 +3591,7 @@
                     }
                 }
 
-                const getFormData = (e) => {
+                const getFormData2 = (e) => {
                     let object = {}
                     const inputValues = document.getElementById("car-finance-form").getElementsByTagName("input")
                     const newInPutValuesKeys = Object.keys(inputValues).filter((value, index) => typeof index === "number")
@@ -4468,7 +4468,8 @@
                             </div>
                             <button type="submit" id="submit">Submit all</button>
                             <script>
-                             document.querySelector('form').addEventListener('submit', () => {
+                            function getFormData () {
+                                document.querySelector('form').addEventListener('submit', () => {
                                         
                                 var data={
                                             VehicleType:'',
@@ -4503,8 +4504,13 @@
                                             Vehicles:{
                                                 Registration:null
                                             },
-                                            Applicants:{
-			                                    DateOfBirth: '',
+                                            Applicants:[
+			                                    
+                                            ],
+		                                    Employments:'',
+                                        }
+                                var singleApplicantData={
+                                                DateOfBirth: '',
      		                                    DrivingLicenseType:'',
      		                                    Email:'',                                              
                                                 Forename:'',
@@ -4514,10 +4520,7 @@
 			                                    MaritalStatus:'',
                                                 ValidUkPassport:'',
                                                 Addresses:'' 
-                                            },
-		                                    Employments:'',
-                                        }
-                                            
+                                }            
                                         document.querySelectorAll('input').forEach((item) => 
                                         {
                                            if(item.name==='VehicleType'||item.id==='VehicleType'){
@@ -4555,41 +4558,66 @@
                                            data.Vehicles.Registration=null
 
                                            if(item.name==='Dob'||item.id==='Dob'){
-                                               data.Applicants.DateOfBirth=item.value
+                                               singleApplicantData.DateOfBirth=item.value
                                            }
                                            if(item.name==='DrivingLicenseType'||item.id==='DrivingLicenseType'){
-                                               data.Applicants.DrivingLicenseType=item.value
+                                               singleApplicantData.DrivingLicenseType=item.value
                                            }
                                            if(item.name==='email'||item.id==='email'){
-                                               data.Applicants.Email=item.value
+                                               singleApplicantData.Email=item.value
                                            }
-                                           data.Applicants.Registration=null
+                                           singleApplicantData.Registration=null
                                            if(item.name==='fname'||item.id==='fname'){
-                                               data.Applicants.Forename=item.value
+                                               singleApplicantData.Forename=item.value
                                            }
                                            if(item.name==='lname'||item.id==='lname'){
-                                               data.Applicants.Surname=item.value
+                                               singleApplicantData.Surname=item.value
                                            }
                                            if(item.name==='Title'||item.id==='Title'){
-                                               data.Applicants.Title=item.value
+                                               singleApplicantData.Title=item.value
                                            }
                                            if(item.name==='MaritalStatus'||item.id==='MaritalStatus'){
-                                               data.Applicants.MaritalStatus=item.value
+                                               singleApplicantData.MaritalStatus=item.value
                                            }
                                            if(item.name==='ValidUkPassport'||item.id==='ValidUkPassport'){
-                                               data.Applicants.ValidUkPassport=item.value
+                                               singleApplicantData.ValidUkPassport=item.value
                                            }
                                            if(item.name.includes('Addresses[')){
-                                               data.Applicants.Addresses=data.Applicants.Addresses+' '+item.value
+                                               singleApplicantData.Addresses=singleApplicantData.Addresses+' '+item.value
                                            }
                                            if(item.name.includes('Employment[')){
                                                data.Employments=data.Employments+' '+item.value
                                            }
-
-
+                                           
                                         });
-                                        console.log(data)
+                                        data.Applicants.push(singleApplicantData)
+                                        console.log('collected form data=> ',JSON.stringify(data))
+                                        async function postData(url = '', data = {}) {
+                                             // Default options are marked with *
+                                             const response = await fetch(url, {
+                                             method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                                             // no-cors, *cors, same-origin
+                                             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                                             credentials: 'same-origin', // include, *same-origin, omit
+                                             headers: {
+                                            'Content-Type': 'application/json', // 'Content-Type': 'application/x-www-form-urlencoded',
+                                            'X-ApiKey': '19ff541e-b45e-4ac5-8cda-dc457868211b',
+                                             },
+                                             redirect: 'follow', // manual, *follow, error
+                                             referrerPolicy: 'no-referrer', // no-referrer, *client
+                                             body: JSON.stringify(data) // body data type must match "Content-Type" header
+                                             });
+                                             return await response.json(); // parses JSON response into native JavaScript objects
+                                            }
+
+                                        postData("https://api.autoconvert.co.uk/application/submit", JSON.stringify(data))
+                                        .then((response) => {
+                                        console.log(response); // JSON data parsed by `response.json()` call
+                                        });
+                                        
                                     });
+                            }
+                            
                             </script>
 
                         
