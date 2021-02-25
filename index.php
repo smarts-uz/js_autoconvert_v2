@@ -4507,7 +4507,7 @@
                                             Applicants:[
 			                                    
                                             ],
-		                                    Employments:'',
+		                                    Employments:[],
                                         }
                                 var singleApplicantData={
                                                 DateOfBirth: '',
@@ -4520,7 +4520,8 @@
 			                                    MaritalStatus:'',
                                                 ValidUkPassport:'',
                                                 Addresses:'' 
-                                }            
+                                }
+                                var employment=''            
                                         document.querySelectorAll('input').forEach((item) => 
                                         {
                                            if(item.name==='VehicleType'||item.id==='VehicleType'){
@@ -4586,12 +4587,13 @@
                                                singleApplicantData.Addresses=singleApplicantData.Addresses+' '+item.value
                                            }
                                            if(item.name.includes('Employment[')){
-                                               data.Employments=data.Employments+' '+item.value
+                                                employment=employment+' '+item.value
                                            }
                                            
                                         });
+                                        data.Employments.push(employment)
                                         data.Applicants.push(singleApplicantData)
-                                        console.log('collected form data=> ',JSON.stringify(data))
+                                        console.log('collected form data=> ',data)
                                         async function postData(url = '', postData = {}) {
                                              // Default options are marked with *
                                              const response = await fetch(url, {
@@ -4602,13 +4604,13 @@
                                              headers: {
                                             'Access-Control-Allow-Origin': '*',
                                             'Content-Type': 'application/json', // 'Content-Type': 'application/x-www-form-urlencoded',
-                                            'X-ApiKey': '19ff541e-b45e-4ac5-8cda-dc457868211b',
+                                            'X-ApiKey': '19ff541eb45e4ac58cdadc457868211b',
                                              },
                                              redirect: 'follow', // manual, *follow, error
                                              referrerPolicy: 'no-referrer', // no-referrer, *client
                                              body: JSON.stringify(postData) // body data type must match "Content-Type" header
                                              });
-                                             return await response.json(); // parses JSON response into native JavaScript objects
+                                             return await response // parses JSON response into native JavaScript objects
                                             }
 
                                         postData("https://api.autoconvert.co.uk/application/submit?=", data)
