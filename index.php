@@ -3579,38 +3579,10 @@
                     </div>
                 </div>
             </div>
-            <script>
-                const postData = async () => {
-                    try {
-                    await fetch("page_API_POST.php", {
-                        method: "POST",
-                        mode: 'cors',
-                        body: JSON.stringify(object)
-                    })} catch(err) {
-                        console.log(err.response)
-                    }
-                }
-
-                const getFormData2 = (e) => {
-                    let object = {}
-                    const inputValues = document.getElementById("car-finance-form").getElementsByTagName("input")
-                    const newInPutValuesKeys = Object.keys(inputValues).filter((value, index) => typeof index === "number")
-                    newInPutValuesKeys.forEach((value) => {
-                        object = {
-                            ...object,
-                            [inputValues[value].name]: inputValues[value].value
-                        }
-                    })
-
-                    postData()
-
-                }
-            </script>
+           
 
             <div class="form-container">
-                <form onsubmit="getFormData()" action="page_API_POST.php" method="post" id="car-finance-form" data-toggle="validator" data-delay="1000" novalidate="true">
-
-
+                <form action="/post.php" method="post" id="car-finance-form" data-toggle="validator" data-delay="1000" novalidate="true">
                     <input type="hidden" name="Referrer" value="" original-name="Referrer">
                     <input type="hidden" name="IpAddress" value="178.218.201.180" original-name="IpAddress">
                     <input type="hidden" name="Make" value="" original-name="Make">
@@ -4594,48 +4566,42 @@
                                 data.Employments.push(employment)
                                 data.Applicants.push(singleApplicantData)
                                 console.log('collected form data=> ',data)
-                                // async function postData(url = '', postData = {}) {
-                                //              // Default options are marked with *
-                                //              const response = await fetch(url, {
-                                //              method: 'POST', // *GET, POST, PUT, DELETE, etc.
-                                //              mode: 'no-cors',// no-cors, *cors, same-origin
-                                //              cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-                                //              credentials: 'same-origin', // include, *same-origin, omit
-                                //              headers: {
-                                //             'Access-Control-Allow-Origin': '*',
-                                //             'Content-Type': 'application/json', // 'Content-Type': 'application/x-www-form-urlencoded',
-                                //             'X-ApiKey': '19ff541eb45e4ac58cdadc457868211b',
-                                //              },
-                                //              redirect: 'follow', // manual, *follow, error
-                                //              referrerPolicy: 'no-referrer', // no-referrer, *client
-                                //              body: JSON.stringify(postData) // body data type must match "Content-Type" header
-                                //              });
-                                //              return await response // parses JSON response into native JavaScript objects
-                                // }
+                               
+                                
+                                // var myHeaders = new Headers();
+                                // myHeaders.append("Content-Type", "application/json");
+                                // myHeaders.append("X-ApiKey", "19ff541e-b45e-4ac5-8cda-dc457868211b");
+                                // myHeaders.append("mode", "cors");
+                                
+                                // var raw=JSON.stringify(data)
 
-                                // postData("https://api.autoconvert.co.uk/application/submit?=", data)
-                                //         .then((response) => {
-                                //         console.log(response); // JSON data parsed by `response.json()` call
+                                // console.log(raw)
+
+                                // var requestOptions = {
+                                // method: 'POST',
+                                // headers: myHeaders,
+                                // body: raw,
+                                // redirect: 'follow'
+                                // };  
+
+                                // fetch("https://api.autoconvert.co.uk/application/submit?=", requestOptions)
+                                // .then(response => response.text())
+                                // .then(result => console.log(result))
+                                // .catch(error => console.log('error', error));
+
+                                // const request = new XMLHttpRequest();
+                                // request.open('POST', 'post.php');
+
+                                // request.setRequestHeader('Content-type', 'multipart/form-data');
+                                
+                                // request.send(data);
+                                // request.addEventListener('load', () => {
+                                //     if(request.status === 200) {
+                                //         console.log(request.response);
+                                //     } else {
+                                //         console.log('failure')
+                                //     }
                                 // });
-                                
-                                var myHeaders = new Headers();
-                                myHeaders.append("Content-Type", "application/json");
-                                myHeaders.append("X-ApiKey", "19ff541e-b45e-4ac5-8cda-dc457868211b");
-                                myHeaders.append("mode", "cors");
-                                
-                                var raw=JSON.stringify(data)
-
-                                var requestOptions = {
-                                method: 'POST',
-                                headers: myHeaders,
-                                body: raw,
-                                redirect: 'follow'
-                                };  
-
-                                fetch("https://api.autoconvert.co.uk/application/submit?=", requestOptions)
-                                .then(response => response.text())
-                                .then(result => console.log(result))
-                                .catch(error => console.log('error', error));
 
                             });
                             }
