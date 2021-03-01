@@ -3584,6 +3584,12 @@
                 <form action="post.php" method="POST" id="car-finance-form" data-toggle="validator" data-delay="1000" novalidate="true">
                     <input type="hidden" name="Referrer" value="" original-name="Referrer">
                     <input type="hidden" name="IpAddress" value="178.218.201.180" original-name="IpAddress">
+                    <input type="hidden" name="employments[0][Employer]"  value="">
+                    <input type="hidden" name="employments[0][JobTitle]"  value="">
+                    <input type="hidden" name="employments[0][EmploymentStatus]"  value="">
+                    <input type="hidden" name="employments[0][TimeAtEmployerMonths]"  value="">
+                    <input type="hidden" name="employments[0][TimeAtEmployerYears]"  value="">
+                    <input type="hidden" name="employments[0][MonthlyIncome]"  value="">
                     <input type="hidden" name="Make" value="" original-name="Make">
                     <input type="hidden" name="Model" value="" original-name="Model">
                     <input type="hidden" name="Registration" value="" original-name="Registration">
@@ -3603,6 +3609,7 @@
                     <input type="hidden" name="DateRegisteredMonth" value="" original-name="DateRegisteredMonth">
                     <input type="hidden" name="DateRegisteredDay" value="" original-name="DateRegisteredDay">
                     <input type="hidden" name="EstimatedAnnualMileage" value="" original-name="EstimatedAnnualMileage">
+                    
                     <div class="form-steps-wrap">
 
                         <div class="js-form-area" style="" id="step1-start-breadcrumb-form" data-step-name="first-step-completed">
@@ -4700,6 +4707,7 @@
         <li class="js-address js-address-{{index}}"><span>{{#if organisationName}}{{organisationName}}, {{/if}} {{#if subBuildingName}}{{subBuildingName}}, {{/if}} {{#if buildingNumber}}{{buildingNumber}}, {{/if}} {{#if buildingName}}{{buildingName}},{{/if}} {{#if street}}{{street}},{{/if}} {{#if town}}{{town}},{{/if}} {{postcode}}</span> <i class="fa fa-pencil-square-o pull-right edit-address" data-index="{{index}}"></i></li>
 </script>
     <script id="employment-template" type="text/x-handlebars-template">
+       
         <input type="hidden" name="Employment[{{index}}].EmploymentStatus" value="{{employmentstatus}}" />
         <input type="hidden" name="Employment[{{index}}].JobTitle" value="{{jobtitle}}" />
         <input type="hidden" name="Employment[{{index}}].Employer" value="{{employer}}" />

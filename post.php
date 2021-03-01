@@ -1,5 +1,5 @@
 <?php
-
+// echo json_encode($_POST, true);
 
 
 function redirect($url)
@@ -118,14 +118,7 @@ function test_data()
 			"MaritalStatus" => "Single",//
 			"ValidUkPassport" => true,//
 		)),
-		"Employments"=> array(array(
-			"Employer"=>getValue("Employer"),
-			"JobTitle"=>getValue("JobTitle"),
-			"EmploymentStatus"=>getValue("EmploymentType"),	
-            "NetMonthlyIncome"=>getValue("NetMonthlyIncome"),		
-			"TimeAtEmployerMonths"=>getValue("currentTimeAtAddressMonths"),
-			"TimeAtEmployerYears"=>getValue("currentTimeAtAddressYears")
-		)),
+		"Employments"=>  getValue("employments"),
         // /{  
         //     "Company":"Vault-tec",
         //     "Building":"1",
