@@ -4704,8 +4704,7 @@
     </script>
 
     <script id="address-display-template" type="text/x-handlebars-template">
-        <li class="js-address js-address-{{index}}"><span>{{#if organisationName}}{{organisationName}}, {{/if}} {{#if subBuildingName}}{{subBuildingName}}, {{/if}} {{#if buildingNumber}}{{buildingNumber}}, {{/if}} {{#if buildingName}}{{buildingName}},{{/if}} {{#if street}}{{street}},{{/if}} {{#if town}}{{town}},{{/if}} {{postcode}}</span> <i class="fa fa-pencil-square-o pull-right edit-address" data-index="{{index}}"></i></li>
-</script>
+    <li class="js-address js-address-{{index}}"><span>{{#if organisationName}}{{organisationName}}, {{/if}} {{#if subBuildingName}}{{subBuildingName}}, {{/if}} {{#if buildingName}}{{buildingName}},{{/if}} {{#if street}}{{street}},{{/if}} {{#if town}}{{town}},{{/if}} {{postcode}}</span> <i class="fa fa-pencil-square-o pull-right edit-address" data-index="{{index}}"></i></li></script>
     <script id="employment-template" type="text/x-handlebars-template">
        
         <input type="hidden" name="Employment[{{index}}].EmploymentStatus" value="{{employmentstatus}}" />
