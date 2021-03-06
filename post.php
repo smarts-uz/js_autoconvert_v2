@@ -103,6 +103,7 @@ function test_data()
             "Mobile" =>getValue("mobile"),//
             "Title" => getValue("Title"),//
 			"Addresses"=>getAddressDetails(getValue("Addresses")),
+            "Employments"=>  getValue("employments"),
 
             // {  
             //     "Building":"The Granary",
@@ -119,7 +120,7 @@ function test_data()
 			"MaritalStatus" => "Single",//
 			"ValidUkPassport" => true,//
 		)),
-		"Employments"=>  getValue("employments"),
+		
         // /{  
         //     "Company":"Vault-tec",
         //     "Building":"1",
@@ -162,7 +163,7 @@ function test_data()
 function redirect_main()
 {
 	//testing
-    // $jsonArrayResponse = get_data();
+     //$jsonArrayResponse = get_data();
     $jsonArrayResponse = test_data();
     //die(print_r($jsonArrayResponse));
     if($jsonArrayResponse['Accepted']){
