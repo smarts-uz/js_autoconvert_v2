@@ -38,7 +38,7 @@
 //     $data=[];
 //     foreach($addresses as $address){
 //         //"Homeowner|2H|England|Richmond Crescent|E49RT|2|1", "Homeowner|1J|England|Richmond Crescent|E49RT|0|2"
-// Homeowner|1A|England|Waltham Forest|E49RT|4|4"  
+// meowner||England|2 Dyas Road|TW165DD|4|4|Hazelwood House|Flat 1|||Middlesex|SUNBURY-ON-THAMES" 
 //         if($address){
 //             $detail=explode("|", $address);
 //             $data[]=array(
