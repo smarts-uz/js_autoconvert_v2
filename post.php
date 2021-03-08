@@ -104,6 +104,7 @@ function test_data()
             "Title" => getValue("Title"),//
 			"Addresses"=>getAddressDetails(getValue("Addresses")),
             "Employments"=>  getValue("employments"),
+            
 
             // {  
             //     "Building":"The Granary",
@@ -120,7 +121,7 @@ function test_data()
 			"MaritalStatus" => "Single",//
 			"ValidUkPassport" => true,//
 		)),
-		
+
         // /{  
         //     "Company":"Vault-tec",
         //     "Building":"1",
@@ -136,7 +137,7 @@ function test_data()
         //     "PhoneNumber":"07777777777"
         // }
     ));
-    //die($json_string);
+   // die($json_string);
     $curl = curl_init();
     curl_setopt_array($curl, array(
         CURLOPT_URL => 'https://api.autoconvert.co.uk/application/submit',
